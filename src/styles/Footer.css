@@ -1,0 +1,40 @@
+
+
+.Footer{
+    bottom: 1rem;
+    display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+    /* width: 100%; */
+    background-color: var(--transparent);
+    padding: 0.3rem 1.6rem;
+    border-radius:1.8rem;
+    border: 0.2rem solid var(--main-color);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Footer_logoContainer{
+    display: flex; flex-direction: row; align-items: baseline; justify-content: center;
+    /* padding: 0rem 0.4rem; */
+}
+.Footer_logoText{
+    font-size: 1.6rem;
+    font-style: italic;
+}
+.Footer__socialMedia{
+    display: flex; flex: row; 
+}
+.Footer__socialMedia1, .Footer__socialMedia2{
+    font-size: 1.6rem;
+    /* background-color: var(--fifth-color); */
+    margin: 0px 0.2rem;
+    border-radius: 2rem;
+    padding: 0.3rem 0.5rem 0.1rem 0.5rem;
+
+    cursor: pointer;
+
+    color: var(--third-color);
+    font-weight: 600;
+    transition: all ease 800ms;
+}.Footer__socialMedia1:hover, .Footer__socialMedia2:hover{
+    background-color: var(--fifth-color);
+    /* color: var(--fourth-color); */
+}

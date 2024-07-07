@@ -1,0 +1,114 @@
+
+
+.Navbar__header{
+    display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+    width: 100%;
+    background-color: var(--transparent);
+    padding: 0.5rem 1.6rem;
+    border-radius:1.8rem;
+    border: 0.2rem solid var(--main-color);
+    position: relative;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Navbar__container1{
+    display: flex; flex-direction: row; align-items: baseline; justify-content: center;
+    /* padding: 0rem 0.4rem; */
+}
+.Navbar__logo{
+    font-size: 1.4rem;
+    padding: 0.2rem 0.2rem;
+    display: flex; flex-direction: row; align-items:center ; justify-content: center;
+    border: 1px solid var(--fifth-color);
+    transition: all ease 800ms;
+}
+.Navbar__logo:hover, .Navbar__logo:focus{
+    transform: rotate(90deg);
+}
+.Navbar__logoText{
+    font-size: 1.8rem;
+    padding: 0rem 0.2rem;
+}
+
+.Navbar__ul{
+    display: flex; flex: row; 
+    text-decoration: none;
+    list-style-type: none;
+
+    position:relative;
+
+    transition: all ease 800ms;
+}
+.Navbar__li{
+    font-size: 1.5rem;
+    padding: 0.2rem 2rem;
+    margin: 0rem 0rem;
+
+    transition: all ease 800ms;
+
+    background-color: var(--fourth-color);
+    color: var(--fifth-color);
+
+    cursor: pointer;
+
+    display: flex; flex-direction: row; justify-content: center; align-items: center;
+}.Navbar__li:hover{
+    background-color: var(--fifth-color);
+    color: var(--fourth-color);
+}
+.Navbar__options{
+    border: 0.1rem solid var(--fifth-color);
+    font-size: 1.6rem;
+    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+    border-radius: 3rem;
+
+    transition: all ease 800ms;
+    display: none;
+}
+@media screen and (max-width:768px) and (min-width:600px){
+    .Navbar__ul{
+        position: absolute;
+        flex-direction: column;
+        top: 4.5rem;
+        right: 0;
+        opacity: 0;
+        transform: scale(0);
+        border: 0.2rem solid var(--fifth-color);
+        border-radius: .2rem;
+        width: 100%;
+    }
+    .Navbar__li{
+        padding:0.5rem auto;
+        background-color: var(--transparent);
+    }
+    .Navbar__options{
+        display: block;
+    }.Navbar__options:hover + .Navbar__ul{
+        transform: scale(1);
+        opacity: 1;   
+    }
+}
+@media screen and (max-width:600px){
+
+    .Navbar__ul{
+        position: absolute;
+        flex-direction: column;
+        top: 4.5rem;
+        right: 0;
+        opacity: 0;
+        transform: scale(0);
+        border: 0.2rem solid var(--fifth-color);
+        border-radius: .2rem;
+        width: 100%;
+    }
+    .Navbar__li{
+        padding:0.5rem auto;
+        background-color: var(--transparent);
+    }
+    .Navbar__options{
+        display: block;
+    }.Navbar__options:hover + .Navbar__ul{
+        transform: scale(1);
+        opacity: 1;   
+    }
+}

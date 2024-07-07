@@ -1,3 +1,17 @@
+*{
+  box-sizing: border-box;
+  margin: 0rem;
+  padding: 0rem;
+  /* border: 0.1rem solid green; */
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+html{
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 12px;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +19,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+
+  --main-color: blue;
+  --secondary-color: wheat;
+  --third-color:black;
+  --fourth-color:white;
+  --fifth-color:silver;
+  --transparent:--transparent;
+}
+#root{
+  min-height: 100vh;
+}
+.App{
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: space-between;
+  width: 100%; 
+  padding: 1rem 8rem;
+  transition: all ease 800ms;
 }
