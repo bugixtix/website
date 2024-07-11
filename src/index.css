@@ -21,10 +21,48 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   min-height: 100vh;
-  background-size: 50% 50%;
-  background-image:repeating-linear-gradient(45deg, #fff, #fff 20px, #df5646 20px, #df5646 40px, #fff 40px, #fff 60px, #1c78a4 60px, #1c78a4 80px);
-  animation: gradientBackground2  5s linear infinite;
-  background-repeat: repeat;
+}
+
+
+@-webkit-keyframes gradientBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes gradientBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes gradientBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-webkit-keyframes showApp {
+  0%{opacity:0; transform: scale(0);}
+  50%{opacity:0.5; transform: scale(0.5);}
+  100%{opacity: 1; transform: scale(1);}
+}
+@-moz-keyframes showApp {
+  0%{opacity:0; transform: scale(0);}
+  50%{opacity:0.5; transform: scale(0.5);}
+  100%{opacity: 1; transform: scale(1);}
+}
+@-o-keyframes showApp {
+  0%{opacity:0; transform: scale(0);}
+  50%{opacity:0.5; transform: scale(0.5);}
+  100%{opacity: 1; transform: scale(1);}
+}
+@keyframes showApp {
+  0%{opacity:0; transform: scale(0);}
+  50%{opacity:0.5; transform: scale(0.5);}
+  100%{opacity: 1; transform: scale(1);}
 }
 
 :root{
@@ -35,55 +73,30 @@ body {
   --fourth-color:white;
   --fifth-color:#e1e3e0;
   --sixth-color:#c1c3c0;
+  --grad-one:#ffffff;
+  --grad-two:#e1e3e0;
+  --grad-three:#97b4e9;
+  --grad-four:#6069f1;
   --transparent:--transparent;
 }
 #root{
   min-height: 100vh;
 }
 .App{
+  opacity: 1;
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: space-between;
   width: 100%; 
   padding: 1rem 8rem;
-  transition: all ease 800ms;
+  transition: all ease 5000ms;
   gap: 1rem;
-}
 
-@keyframes gradientBackground2{
-  0%{
-    background-position: 0% 0%;
-  }
-  50%{
-    background-position: 50% 50%;
-  }
-  100%{
-    background-position: 100% 100%;
-  }
-}
+  background: linear-gradient(141deg, var(--grad-one), var(--grad-two), var(--grad-three), var(--grad-four),var(--grad-one));
+  background-size: 1000% 1000%;
 
-@keyframes gradientBackground {
-  0%{
-    background-position:0% 0%;
-  }
-  15%{
-    background-position:-200% 200%;
-  }
-  29%{
-    background-position:0% 0%;
-  }
-  43%{
-    background-position:200% -200%;
-  }
-  57%{
-    background-position:0% 0%;
-  }
-  71%{
-    background-position:-200% -200%;
-  }
-  85%{
-    background-position:0% 0%;
-  }
-  100%{
-    background-position:200% 200%;
-  }
+  -webkit-animation: gradientBackground 9s ease infinite;
+  -moz-animation: gradientBackground 9s ease infinite;
+  -o-animation: gradientBackground 9s ease infinite;
+  animation: gradientBackground 9s ease infinite, showApp 5s linear forwards;
+
 }

@@ -46,7 +46,7 @@
 
     transition: all ease 800ms;
 
-    background-color: var(--fourth-color);
+    background-color: var(--transparent);
     color: var(--sixth-color);
 
     cursor: pointer;
