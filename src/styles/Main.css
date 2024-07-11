@@ -68,9 +68,9 @@
     margin: 0.5rem 0rem 0rem 0rem;
     padding: 0.3rem;
     transition: all ease 800ms;
-    border-radius:1rem;
+    border-radius:2rem;
     border:none;
-    box-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
+    /*box-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);*/
 
 }.Main__aboutButton:hover{
     background-color: var(--main-color);
@@ -92,10 +92,10 @@
     border: none;
     transition: all ease 800ms;
     
-    font-weight: 600;
-
-    border-radius: 2rem;
-    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.4);
+    /*font-weight: 600;*/
+    font-size: 1.6rem;
+    border-radius: 0.2rem;
+    /* box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.4);*/
 
 }.Main__contactButton:hover{
     background-color: var(--main-color);

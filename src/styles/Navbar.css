@@ -47,13 +47,13 @@
     transition: all ease 800ms;
 
     background-color: var(--fourth-color);
-    color: var(--fifth-color);
+    color: var(--sixth-color);
 
     cursor: pointer;
 
     display: flex; flex-direction: row; justify-content: center; align-items: center;
 }.Navbar__li:hover{
-    background-color: var(--fifth-color);
+    background-color: var(--sixth-color);
     color: var(--fourth-color);
 }
 .Navbar__options{
