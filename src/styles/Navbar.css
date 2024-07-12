@@ -6,9 +6,9 @@
     background-color: var(--transparent);
     padding: 0.5rem 1.6rem;
     border-radius:1.8rem;
-    border: 0.2rem solid var(--main-color);
+    border: 0.2rem solid var(--color-1);
     position: relative;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 8px var(--lt-color-5);
 }
 
 .Navbar__container1{
@@ -19,13 +19,14 @@
     font-size: 1.4rem;
     padding: 0.2rem 0.2rem;
     display: flex; flex-direction: row; align-items:center ; justify-content: center;
-    border: 1px solid var(--fifth-color);
+    border: 0.2rem solid var(--lt-color-2);
     transition: all ease 800ms;
 }
 .Navbar__logo:hover, .Navbar__logo:focus{
     transform: rotate(90deg);
 }
 .Navbar__logoText{
+    color:var(--lt-color-6);
     font-size: 1.8rem;
     padding: 0rem 0.2rem;
 }
@@ -47,23 +48,28 @@
     transition: all ease 800ms;
 
     background-color: var(--transparent);
-    color: var(--sixth-color);
+    color: var(--lt-color-7);
 
     cursor: pointer;
 
     display: flex; flex-direction: row; justify-content: center; align-items: center;
 }.Navbar__li:hover{
-    background-color: var(--sixth-color);
-    color: var(--fourth-color);
+    background-color: var(--dt-color-5);
+    color: var(--dt-color-6);
 }
 .Navbar__options{
-    border: 0.1rem solid var(--fifth-color);
+    border: 0.2rem solid var(--lt-color-2);
     font-size: 1.6rem;
     padding: 0.5rem 0.5rem 0.2rem 0.5rem;
     border-radius: 3rem;
 
     transition: all ease 800ms;
     display: none;
+}
+
+.selectedLi{
+    background-color: var(--dt-color-5);
+    color: var(--dt-color-6);
 }
 @media screen and (max-width:768px) and (min-width:600px){
     .Navbar__ul{
@@ -73,7 +79,7 @@
         right: 0;
         opacity: 0;
         transform: scale(0);
-        border: 0.2rem solid var(--fifth-color);
+        border: 0.2rem solid var(--lt-color-2);
         border-radius: .2rem;
         width: 100%;
     }
@@ -97,7 +103,7 @@
         right: 0;
         opacity: 0;
         transform: scale(0);
-        border: 0.2rem solid var(--fifth-color);
+        border: 0.2rem solid var(--lt-color-2);
         border-radius: .2rem;
         width: 100%;
     }

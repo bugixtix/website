@@ -5,6 +5,8 @@ import { SlOptions as Options } from "react-icons/sl";
 
 export default function Navbar({}){
 
+    var site = 'Home'; 
+
     return(
 
         <header className="Navbar__header">
@@ -19,7 +21,7 @@ export default function Navbar({}){
                     <Options/>
                 </p>
                 <ul className="Navbar__ul">
-                    <li className="Navbar__li"> Home </li>
+                    <li className={`Navbar__li ${site =='Home' && 'selectedLi'}`}> Home </li>
                     <li className="Navbar__li"> Blog </li>
                     <li className="Navbar__li"> About </li>
                     <li className="Navbar__li"> Contact </li>

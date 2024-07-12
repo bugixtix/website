@@ -7,8 +7,8 @@
     background-color: var(--transparent);
     padding: 0.3rem 1.6rem;
     border-radius:1.8rem;
-    border: 0.2rem solid var(--main-color);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 0.2rem solid var(--color-1);
+    box-shadow: 4px 4px 8px var(--lt-color-5);
 }
 
 .Footer_logoContainer{
@@ -16,7 +16,7 @@
     /* padding: 0rem 0.4rem; */
 }
 .Footer_logoText{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-style: italic;
 }
 .Footer__socialMedia{
@@ -31,10 +31,10 @@
 
     cursor: pointer;
 
-    color: var(--third-color);
+    color: var(--lt-color-7);
     font-weight: 600;
     transition: all ease 800ms;
 }.Footer__socialMedia1:hover, .Footer__socialMedia2:hover{
-    background-color: var(--fifth-color);
-    /* color: var(--fourth-color); */
+    background-color: var(--dt-color-5);
+    color: var(--dt-color-6); 
 }
