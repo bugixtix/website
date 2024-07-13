@@ -68,7 +68,7 @@
 }
 
 .selectedLi{
-    background-color: var(--dt-color-5);
+    background-color: var(--dt-color-5) !important;
     color: var(--dt-color-6);
 }
 @media screen and (max-width:768px) and (min-width:600px){

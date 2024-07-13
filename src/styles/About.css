@@ -1,0 +1,54 @@
+
+
+.About{
+    display: flex; flex-direction: column; align-items: center ; justify-content: center;
+    flex:1;
+}
+.About__container{
+    display: flex; flex-direction: row; align-items: center ; justify-content: center;
+    background-color: var(--lt-color-1);
+    border-radius: 0.4rem;
+    padding: 2rem;
+    box-shadow: 2px 2px 4px var(--lt-color-5);
+
+    background-image: url("../images/aboutBackground.jpg");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:multiply;
+
+}
+.About__textContainer{
+    display: flex; flex-direction: column ; align-items: flex-start; justify-content: center; 
+    flex: 1.4;
+    gap:1rem;
+}
+.About__imgContainer{
+    display: flex; flex-direction: row ; align-items: center; justify-content: center; 
+    flex: 1;
+}
+.About__title{
+    font-size: 2rem;
+}
+.About__text{
+    font-size:1.6rem;
+}
+.About__svg{
+    width: 80%;
+}
+
+@media only screen and (max-width:1024px) and (min-width:768px){
+ .About__container{
+    flex-direction: column;
+ }   
+}
+@media only screen and (max-width:767px) and (min-width:600px){
+    .About__container{
+        flex-direction: column;
+     }   
+}
+@media only screen and (max-width:600px) {
+    .About__container{
+        flex-direction: column;
+     }   
+}

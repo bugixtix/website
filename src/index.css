@@ -75,7 +75,9 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-
+#Link{
+  text-decoration: none;
+}
 #root{
   min-height: 100vh;
 }
@@ -92,10 +94,10 @@ body {
   background: linear-gradient(45deg, var(--lt-gradient-1), var(--lt-gradient-2), var(--lt-gradient-3), var(--lt-gradient-4));
   background-size: 400% 400%;
   
-  -webkit-animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;
+  /* -webkit-animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;
   -moz-animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;
   -o-animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;
-  animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;
+  animation: gradientBackground 120s linear infinite, showApp 3s linear forwards; */
   
 }
 
