@@ -6,7 +6,7 @@ import { RxSlash as Slash} from "react-icons/rx";
 
 export default function Main({}){
 
-    var title = "Simple website? Always."
+    var title = "Simple websites? Always."
     var description = "You need a simple, user-friendly and well-designed website? Let it on us!"
     var btnText1 = "Learn more about"
     var btnText2 = "Say Hi!"

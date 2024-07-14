@@ -5,6 +5,7 @@ import './styles/Navbar.css'
 import './styles/Main.css'
 import './styles/Footer.css'
 import './styles/About.css'
+import './styles/Contact.css'
 
 import Navbar from './components/Navbar'; 
 import Main from './components/Main';
