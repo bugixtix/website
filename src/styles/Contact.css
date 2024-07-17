@@ -46,7 +46,26 @@
     display: flex; flex-direction: row; align-items: center; justify-content: center;
     gap: 1rem;
 }
-
+.Contact__alert{
+    background-color: var(--color-4);
+    color: var(--white);
+    font-size: 1.4rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem ;
+    box-shadow: 2px 2px 2px var(--dt-color-5);
+    transition: opacity ease 600ms, transform ease 600ms;
+    transform: scale(0);
+    opacity: 0;
+    height: 0;
+    /* display: none; */
+}
+.show__alert{
+    
+    /* display: block; */
+    height: auto;
+    opacity: 1;
+    transform: scale(1);
+}
 
 /* .Contact__nameField:focus,.Contact__emailField:focus, .Contact__messageField:focus{
     outline: var(--lt-color-3) solid 0.2rem, var(--white) solid 0.4rem;
