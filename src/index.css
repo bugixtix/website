@@ -48,6 +48,7 @@
   --lt-gradient-4:#cfcfcf;
 
   --color-6:#F0F2F588;
+  --color-7: #05040755;
   
 }
 
@@ -93,7 +94,7 @@ body {
   gap: 1rem;
 
   background: linear-gradient(45deg, var(--lt-gradient-1), var(--lt-gradient-2), var(--lt-gradient-3), var(--lt-gradient-4));
-  background-size: 400% 400%;
+  /* background-size: 400% 400%; */
   
   /* -webkit-animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;
   -moz-animation: gradientBackground 120s linear infinite, showApp 3s linear forwards;

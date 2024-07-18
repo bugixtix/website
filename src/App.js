@@ -18,9 +18,11 @@ import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
 function App() {
   var [darkMode, darkMode$] = useState(false)
   var [currentPage, currentPage$] = useState("home")
-
+  var darkTheme = () =>{
+    return darkMode ? {backgroundColor:'white'} : {backgroundColor:'blue'}
+  }
   return (
-    <div className="App">
+    <div className="App" style={darkMode ? {background:'var(--dt-color-1)'} : {background:'var(--lt-gradient-1)'}}>
       <BrowserRouter>
         <Navbar 
           darkMode={darkMode} darkMode$={darkMode$}

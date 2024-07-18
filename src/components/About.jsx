@@ -1,17 +1,18 @@
 import React from "react";
 import aboutImg from "../images/aboutImg.svg"
 
-export default function About({}){
+export default function About({darkMode}){
 
     var title = "About Ixtix"
-    var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar ante eu nibh dignissim, et semper est vehicula. Nulla scelerisque orci eget lorem vehicula hendrerit. Nulla pharetra tristique mauris sit amet sagittis. In rhoncus, lorem quis tincidunt scelerisque, magna odio sodales arcu, fermentum euismod augue est nec metus. Duis eget sollicitudin elit, vel ullamcorper nisi. Maecenas scelerisque iaculis euismod. Nulla rutrum justo dolor, nec ultricies velit pulvinar vitae. Maecenas pharetra consequat dolor, eu malesuada urna eleifend vitae. In hac habitasse platea dictumst. Mauris vitae egestas enim, vitae imperdiet quam. Duis consectetur nulla sit amet justo euismod iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas sit amet mi sit amet ante mattis varius. Fusce elementum ligula facilisis velit posuere, sit amet sodales enim elementum. \n Proin ut elit sagittis, pellentesque magna ut, maximus libero. Suspendisse suscipit orci vitae lorem ultrices, et dictum arcu aliquam. Cras dignissim, mauris vel pulvinar aliquet, justo leo ullamcorper enim, a tempor nulla quam vitae diam. In non pharetra quam. Nullam sed augue nec sem pretium facilisis quis nec libero. Sed elementum, leo a mattis iaculis, nisi tellus congue justo, eget finibus neque odio pellentesque metus. Phasellus augue ante, rutrum vel."
+    var text = <> <br></br>A passionate web developer who finds immense joy in creating websites and applications. This platform serves as a space where I share articles on various IT topics, including web development and programming languages. Here, you will also be able to view my portfolio and see some of the projects I've worked on (currently under construction, but coming soon). <br></br> <br></br>I have always been a curious individual, and I love spending my free time learning new things. My enthusiasm for technology and programming drives me to constantly explore and expand my knowledge. Through this website, I aim to connect with like-minded individuals, share insights, and contribute to the tech community. Stay tuned for updates on my latest projects and articles. <br></br><br></br>I hope you find the content here informative and inspiring. Thank you for visiting.</>
 
     return(
         <div className="About">
-            <div className="About__container">
+            <div className="About__container" style={darkMode ? {boxShadow:'none'} :{}}>
+                <div className="About__background" style={darkMode ? {filter:'brightness(40%)'} : {filter:'brightness(100%)'}}></div>
                 <div className="About__textContainer">
-                    <h2 className="About__title">{title}</h2>
-                    <p className="About__text">{text}</p>
+                    <h2 className="About__title" style={darkMode ? {color:'var(--white)'} : {}}>{title}</h2>
+                    <p className="About__text" style={darkMode ? {color:'var(--white)'} : {}}>{text}</p>
                 </div>
                 <div className="About__imgContainer">
                     <img src={aboutImg} alt="about me image" className="About__svg"/>

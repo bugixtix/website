@@ -1,20 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import development from '../images/development.png'
 import { FaChevronLeft as Left } from "react-icons/fa";
 import { FaChevronRight as Right} from "react-icons/fa";
 import { RxSlash as Slash} from "react-icons/rx";
 
-export default function Main({}){
+export default function Main({darkMode}){
 
-    var title = "Simple websites? Always."
-    var description = "You need a simple, user-friendly and well-designed website? Let it on us!"
-    var btnText1 = "Learn more about"
-    var btnText2 = "Say Hi!"
+    var title = "Hi there!"
+    var description = "I'm Ixtix, a passionate web developer with a passion for clean code and user-friendly designs :)"
+    var btnText1 = "Take a look at my work"
+    var btnText2 = "Say Hi"
     return(
 
         <div className="Main">
 
-            <div className="Main__container0">
+            <div className="Main__container0" style={darkMode ? {boxShadow:'none'} : {}} >
+
+            <div className="Main__container0Background"  style={darkMode ? {filter:'brightness(35%)'} : {filter:'brightness(100%)'}}>
+            </div>
 
             <div className="Main__container1">
 
@@ -24,7 +28,7 @@ export default function Main({}){
 
                 <div className="Main__firstCodeslash">
                     <Left className="CodeslashLeft"/>
-                        <h2 className="Main__codeslashText"> body</h2>
+                        <h2 className="Main__codeslashText" style={darkMode ? {color:'var(--dt-color-5)'} : {}}> body</h2>
                     <Right className="CodeslashRight"/>
                 </div>
 
@@ -33,9 +37,9 @@ export default function Main({}){
                 <div className="Main__container111">
                     <Left className="Codeslash leftIcon"/>
                     <div className="Main__intro">
-                        <h2 className="Main__title"> {title}</h2>
-                        <h3 className="Main__description"> {description}</h3>
-                        <button className="Main__aboutButton"> {btnText1}</button>
+                        <h2 className="Main__title" style={darkMode ? {color:'var(--white)'} : {}} > {title}</h2>
+                        <h3 className="Main__description" style={darkMode ? {color:'var(--white)'} : {}}> {description}</h3>
+                        <Link id="Link" to={'https://github.com/bugixtix'} className="Main__aboutButton">{btnText1} </Link>
                     </div>
                     <Slash className="Codeslash slashIcon"/>
                     <Right className="Codeslash rightIcon"/>
@@ -43,7 +47,7 @@ export default function Main({}){
 
                 <div className="Main__thirdCodeslash">
                     <Left className="CodeslashLeft"/>
-                    <h2 className="Main__codeslashText"> body </h2>
+                    <h2 className="Main__codeslashText" style={darkMode ? {color:'var(--dt-color-5)'} : {}}> body </h2>
                     <Slash className="CodeslashSlash"/>
                     <Right className="CodeslashRight"/>
                 </div>
@@ -52,7 +56,7 @@ export default function Main({}){
 
 
             <div className="Main__container2">
-                <button className="Main__contactButton"> {btnText2}</button>
+                <Link id="Link" to="/contact" className="Main__contactButton"> {btnText2}</Link>
             </div>
 
             </div>

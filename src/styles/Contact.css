@@ -7,14 +7,34 @@
 
 .Contact__container{
     display: flex ; flex-direction: row-reverse; align-items: center; justify-content: space-around; 
-    border-radius: 0.4rem;
     background-color: var(--lt-color-2);
     gap: 3rem;
     padding: 3rem 2rem;
-    background-image: url(../images/contactUsBackground.jpg);
-    background-size: cover;
     width: 100%;
     box-shadow: 2px 2px 4px var(--lt-color-5);
+    position:relative;
+    border-radius: 1rem;
+}
+.Contact__background{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition:all ease 5000ms;
+    background-image: url(../images/contactUsBackground.jpg);
+    background-size: cover;
+    border-radius: 1rem;
+    z-index: 1;
+
+}
+.Contact__wrapper{
+    z-index: 2;
+    display: flex ; flex-direction: row-reverse; align-items: center; justify-content: space-around; 
+    background-color: var(--transparent);
+    gap: 3rem;
+    padding: 3rem 2rem;
+    width: 100%;
+    transition: all ease 3000ms;
 }
 .Contact__form{
     display: flex; flex-direction: column ; align-items: center ; justify-content: flex-start; 
@@ -23,6 +43,7 @@
     background-color: var(--color-6);
     border-radius: 0.4rem;
     box-shadow: 4px 4px 3px 2px var(--lt-color-5);
+    transition: all ease 5000ms;
 }
 .Contact__titleContainer{
     display: flex; flex-direction: column; justify-content: center; align-items: center; 
@@ -30,12 +51,14 @@
 }
 .Contact__title{
     font-size: 3rem;
+    color: var(--black);
 }
 .Contact__nameComponent, .Contact__emailComponent, .Contact__messageComponent{
     position: relative;
     display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
-    background-color: aliceblue;
+    background-color: var(--dt-color-5);
     /* padding: 1rem 0rem 0rem 0rem; */
+    border-radius: 0.5rem;
     font-size: 1.4rem;
 }
 .Contact__nameText, .Contact__messageText, .Contact__emailText{
@@ -45,6 +68,7 @@
     z-index: 1;
     display: flex; flex-direction: row; align-items: center; justify-content: center;
     gap: 1rem;
+    color: var(--white);
 }
 .Contact__alert{
     background-color: var(--color-4);
@@ -57,33 +81,32 @@
     transform: scale(0);
     opacity: 0;
     height: 0;
+    width: 25rem;
     /* display: none; */
 }
 .show__alert{
-    
-    /* display: block; */
     height: auto;
     opacity: 1;
     transform: scale(1);
 }
 
-/* .Contact__nameField:focus,.Contact__emailField:focus, .Contact__messageField:focus{
-    outline: var(--lt-color-3) solid 0.2rem, var(--white) solid 0.4rem;
-    border: none;
-} */
 .Contact__nameField,.Contact__emailField, .Contact__messageField{
     z-index: 2;
     background-color: var(--transparent);
     padding: 0.4rem;
-    border-radius: 0.1rem;
+    border-radius: 0.5rem;
     border: none;
     border-bottom: 0.3rem solid var(--lt-color-5);
     width: 25rem;
     transition: all ease 400ms;
-    &:focus{
+    
+    &:focus, &:hover{
         box-shadow: 0.3rem 0.3rem 0px 0px var(--lt-color-3) inset, -0.3rem -0.3rem 0px 0px var(--lt-color-3 ) inset;
         outline: none;
     }
+}
+.Contact__messageField{
+    height: 10rem;
 }
 .Contact__sendButton{
     width: 25rem ;
@@ -91,15 +114,16 @@
     border-radius: 0.4rem;
     border: none;
     cursor: pointer;
-    background-color: var(--lt-color-1);
+    background-color: var(--dt-color-5);
     transition:all ease 800ms;
     display: flex; flex-direction: row; align-items: center; justify-content: center;
     gap:0.5rem;
+    /* box-shadow: 2px 2px 4px var(--lt-color-3); */
+    color: var(--white);
     &:hover, &:focus{
         outline: none;
         box-shadow: 0.2rem 0.2rem 0px 0px var(--lt-color-3) inset, -0.2rem -0.2rem 0px 0px var(--lt-color-3 ) inset;
-        background-color: var(--dt-color-5);
-        color: var(--white);
+        background-color: var(--lt-color-6);
     }
 }
 
@@ -109,12 +133,18 @@
 
 @media only screen and (max-width:1024px) and (min-width:768px) {
     .Contact__container{flex-direction: column;}
+    .Contact__wrapper{flex-direction: column;}
 }
 @media only screen and (max-width:768px) and (min-width:600px) {
     .Contact__container{flex-direction: column;}
+    .Contact__wrapper{flex-direction: column;}
 }
 @media only screen and (max-width:600px) {
-    .Contact__container{flex-direction: column;}
+    .Contact__container{flex-direction: column; padding: 0;}
+    .Contact__wrapper{flex-direction: column; width: 100%;}
+    /* .Contact__emailField{width: 100%;} */
     .Contact__title{font-size: 2rem;}
-    .Contact__nameField, .Contact__emailField, .Contact__messageField, .Contact__sendButton{width: 20rem;}
+    .Contact__nameField, .Contact__emailField, .Contact__messageField{width: 100%;}
+    .Contact__form{padding:4rem 0rem 2rem 0rem; width: 100%;}
+    .Contact__emailComponent, .Contact__nameComponent, .Contact__messageComponent, .Contact__sendButton{width: 90%;}
 }

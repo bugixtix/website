@@ -5,12 +5,12 @@ import { MdOutlineAlternateEmail as Email } from "react-icons/md";
 import { BiMessageDetail as Message } from "react-icons/bi";
 import { GrSend as Send } from "react-icons/gr";
 
-export default function Contact({}){
+export default function Contact({darkMode}){
     var [inputFocused,inputFocused$] = useState({nameField:false, emailField:false, messageField:false })
     var [message, message$] = useState({_name:"", _email:"",_message:""})
     var [showAlert, showAlert$] = useState(false)
     var [alertSection, alertSection$] = useState({show:false, text:''})
-    var title = 'Something in mind?'
+    var title = 'Get in touch :)'
     var PATH = 'http://localhost:5000/api/sendMessage'
     //
     function doNothing(){}
@@ -37,17 +37,18 @@ export default function Contact({}){
     },[inputFocused])
 
     //
-    useEffect(()=>{
-        setTimeout(()=>alertSection$({text:'', show:false}), 5000)
-    },[alertSection])
     //
-
+    
     //
     function formSubmit(){
-        validateForm(message) ? sendMessage() : alertSection$({show:true, text:`Message couldn't be sent, <br></br> Please check your info`})
-
+        validateForm(message) ? sendMessage() : alertSection$({show:true, text:"Message couldn't be sent, Please check your info"})    
         // console.log(message)
     }
+    useEffect(()=>{
+        if(alertSection.show){
+            setTimeout(()=>alertSection$({text:'', show:false}), 5000)
+        }
+    },[alertSection])
 
     
     async function sendMessage(){
@@ -90,34 +91,41 @@ export default function Contact({}){
 
     return(
         <div className="Contact">
-            <div className="Contact__container">
+            <div className="Contact__container" style={darkMode ? {boxShadow:'none'} : {}}>
+
+                <div className="Contact__background" style={darkMode ? {filter:'brightness(50%)'} : {filter:'brightness(100%)'}}></div>
+
+                <div className="Contact__wrapper">
 
                 <div className="Contact__titleContainer">
-                    <h2 className="Contact__title">{title}</h2>
+                    <h2 className="Contact__title" style={darkMode ? {color:'var(--white)'} : {}}>{title}</h2>
                 </div>
 
-                <div className="Contact__form">
+                <div className="Contact__form" style={darkMode ? {boxShadow:'none', backgroundColor:'var(--color-7)'} : {}}>
 
                 <div className="Contact__nameComponent">
-                    <input type="text" className="Contact__nameField" onFocus={elementFocused} value={message._name} onChange={changeValue} />
-                    <p className="Contact__nameText"> <User/> Your name here</p>
+                    <input type="text" className="Contact__nameField" onFocus={elementFocused} value={message._name} onChange={changeValue}  />
+                    <p className="Contact__nameText" style={(!darkMode && inputFocused.nameField) ? {color:'var(--black)'} : {}}> <User/> Your name here</p>
                 </div>
                 
                 <div className="Contact__emailComponent">
-                    <p className="Contact__emailText"> <Email/> Your email here</p>
+                    <p className="Contact__emailText" style={(!darkMode && inputFocused.nameField) ? {color:'var(--black)'} : {}}> <Email/> Your email here</p>
                     <input type="text" className="Contact__emailField" onFocus={elementFocused} value={message._email} onChange={changeValue} />
                 </div>
 
                 <div className="Contact__messageComponent">
-                    <p className="Contact__messageText"> <Message/> Your message here</p>
+                    <p className="Contact__messageText" style={(!darkMode && inputFocused.nameField) ? {color:'var(--black)'} : {}}> <Message/> Your message here</p>
                     <textarea className="Contact__messageField" onFocus={elementFocused} value={message._message} onChange={changeValue}> </textarea>
                 </div>
+
+                <button className="Contact__sendButton" onClick={formSubmit}> <Send/> Send </button>
 
                 <div className={`Contact__alert ${alertSection.show && 'show__alert'}`}>
                     {alertSection.text}
                 </div>
 
-                <button className="Contact__sendButton" onClick={formSubmit}> <Send/> Send </button>
+                </div>
+
                 </div>
 
             </div>
