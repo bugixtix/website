@@ -17,6 +17,8 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Article from './components/Article';
+import AllArticles from './components/AllArticles'
+import SearchResult from './components/SearchResult';
 
 import BlogData from './Blog.json';
 
@@ -24,6 +26,7 @@ import BlogData from './Blog.json';
 function App() {
   var [darkMode, darkMode$] = useState(false)
   var [currentPage, currentPage$] = useState("home")
+  var [searchQuery, searchQuery$] = useState("")
 
   // index for current article
   var [currentIndex, currentIndex$] = useState(BlogData.length - 1 || 0)
@@ -32,6 +35,11 @@ function App() {
   var darkTheme = () =>{
     return darkMode ? {backgroundColor:'white'} : {backgroundColor:'blue'}
   }
+
+  useEffect(()=>{
+    console.log(searchQuery)
+  },[searchQuery])
+
   return (
     <div className="App" style={darkMode ? {background:'var(--dt-color-1)'} : {background:'var(--lt-gradient-1)'}}>
       <BrowserRouter>
@@ -55,6 +63,7 @@ function App() {
                 darkMode={darkMode} darkMode$={darkMode$}
                 currentPage={currentPage} currentPage$={currentPage$}
                 currentIndex={currentIndex} currentIndex$={currentIndex$}
+                searchQuery={searchQuery} searchQuery$={searchQuery$}
               />}/>
             <Route path="/contact" element={
               <Contact
@@ -65,16 +74,30 @@ function App() {
             {
               BlogData.map(oneBlogData=>{
                 return(
-                  <Route path={`blog/article/${oneBlogData.title.replace(/ /g, "_").toLowerCase()}`} element={<Article ArticlesData={oneBlogData}/>} key={oneBlogData.id} />
+                  <Route path={`blog/article/${oneBlogData.title.replace(/ /g, "_").toLowerCase()}`} element={
+                  <Article 
+                      ArticlesData={oneBlogData}
+                      darkMode={darkMode} darkMode$={darkMode$}
+                  />} 
+                  key={oneBlogData.id} />
                 )
               })
             }
-              
-              
-              {/* <Article
-                  darkMode={darkMode} darkMode$={darkMode$}
-                  currentPage={currentPage} currentPage$={currentPage$}
-              /> */}
+
+          <Route
+            path='/blog/articles' element={
+              <AllArticles
+                darkMode={darkMode} darkMode$={darkMode$}
+            />}
+          />
+
+          <Route
+            path='/search-result' element={
+              <SearchResult
+                searchQuery={searchQuery} searchQuery$={searchQuery$} 
+              />
+            }
+          />
               
 
           </Routes>

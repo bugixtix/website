@@ -4,16 +4,19 @@
     {
         "id":1 ,
         "title":"Javascript Methods",
-        "img":"/images/javascriptMethods.png"
+        "img":"/images/javascriptMethods.png",
+        "description":"The most common methods in javascript"
     },
     {
         "id":2 ,
         "title":"NodeJS introduction",
-        "img":"/images/nodejs.jpg"
+        "img":"/images/nodejs.jpg",
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
     },
     {
         "id":3,
         "title":"Must-know CSS tricks",
-        "img":"/images/cssTricks.jpg"
+        "img":"/images/cssTricks.jpg",
+        "description":"Here are some css tricks that are very useful to know"
     }
 ]

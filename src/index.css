@@ -62,7 +62,7 @@
 
 }
 html{
-  width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   font-size: 12px;
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
@@ -79,6 +79,7 @@ body {
 }
 #Link{
   text-decoration: none;
+  color: var(--dt-color-1);
 }
 #root{
   min-height: 100vh;
