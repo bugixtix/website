@@ -2,14 +2,6 @@ import React,{useEffect, useState} from 'react'
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
 
 
-import './App.css';
-import './styles/Navbar.css'
-import './styles/Main.css'
-import './styles/Footer.css'
-import './styles/About.css'
-import './styles/Contact.css'
-import './styles/Blog.css'
-
 import Navbar from './components/Navbar'; 
 import Main from './components/Main';
 import Footer from './components/Footer';
@@ -19,6 +11,15 @@ import Contact from './components/Contact';
 import Article from './components/Article';
 import AllArticles from './components/AllArticles'
 import SearchResult from './components/SearchResult';
+
+import './App.css';
+import './styles/Navbar.css'
+import './styles/Main.css'
+import './styles/Footer.css'
+import './styles/About.css'
+import './styles/Contact.css'
+import './styles/Blog.css'
+import './styles/Article.css'
 
 import BlogData from './Blog.json';
 
