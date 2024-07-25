@@ -79,12 +79,18 @@ body {
 }
 #Link{
   text-decoration: none;
-  color: var(--dt-color-1);
+  /* color: var(--dt-color-1); */
 }
 #root{
   min-height: 100vh;
 }
-
+pre{
+  white-space: pre-wrap;
+}
+blockquote{
+  background-color: var(--lt-color-3);
+  padding-left: 1rem;
+}
 .App{
   opacity: 1;
   min-height: 100vh;

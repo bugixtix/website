@@ -16,12 +16,14 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$})
         var blog_li = document.querySelector('.blog__li')
         var contact_li = document.querySelector('.contact__li')
         var about_li= document.querySelector('.about__li')
+        var gallery_li = document.querySelector('.gallery__li')
         home_li.classList.remove('selectedLi');
         blog_li.classList.remove('selectedLi');
         contact_li.classList.remove('selectedLi');
         about_li.classList.remove('selectedLi');
-        currentPage == 'home' ? home_li.classList.add('selectedLi') : currentPage == 'blog' ? blog_li.classList.add('selectedLi') : currentPage == 'about' ? about_li.classList.add('selectedLi') : currentPage == 'contact' ? contact_li.classList.add('selectedLi') : console.log('hi')
-        console.log(currentPage)
+        gallery_li.classList.remove('selectedLi');
+        currentPage == 'home' ? home_li.classList.add('selectedLi') : currentPage == 'blog' ? blog_li.classList.add('selectedLi') : currentPage == 'about' ? about_li.classList.add('selectedLi') : currentPage == 'contact' ? contact_li.classList.add('selectedLi') : currentPage == 'gallery' ? gallery_li.classList.add('selectedLi') : console.log('hi')
+        console.log(gallery_li)
     },[currentPage])
 
 
@@ -46,6 +48,8 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$})
                     <Link id="Link" to={'/blog'}><li className={`Navbar__li blog__li`} name={'blog'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> Blog </li></Link> 
                     <Link id="Link" to={'/about'}><li className={`Navbar__li about__li`} name={'about'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> About </li></Link>
                     <Link id="Link" to={'/contact'}><li className={`Navbar__li contact__li`} name={'contact'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> Contact </li></Link>
+                    <Link id="Link" to={'/gallery'}><li className={`Navbar__li gallery__li`} name={'gallery'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> Gallery </li></Link>
+
                     <li className="Navbar__li" onClick={setDarkTheme} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Moon/></li>
                 </ul>
             </div>
