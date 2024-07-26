@@ -1,3 +1,5 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+@import url('https://fonts.cdnfonts.com/css/georgia');
 
 :root{
   
@@ -42,6 +44,17 @@
   --dt-color-7:#020202; /* p */
   --dt-color-8:#3d4243;
 
+  --dynamic-color-1:#2C3E50;
+  --dynamic-color-2:#1C2833;
+  --dynamic-color-3:#F39C12; /* button  */
+  --dynamic-color-4:#E67E22; /* button hover */
+  --dynamic-color-5:#707B7C; /* shadow */
+  --dynamic-color-6:#ECF0F1; /* h2 */
+  --dynamic-color-7:#020202; /* p */
+  --dynamic-color-8:#020202;
+  
+
+
   --lt-gradient-1:#fcfcfc;
   --lt-gradient-2:#efefef;
   --lt-gradient-3:#dfdfdf;
@@ -84,12 +97,40 @@ body {
 #root{
   min-height: 100vh;
 }
+::selection{
+  color: var(--dt-color-1);
+  background-color: var(--lt-color-4);
+}
 pre{
   white-space: pre-wrap;
 }
 blockquote{
   background-color: var(--lt-color-3);
-  padding-left: 1rem;
+  padding-left: 1.8rem;
+  border-left: 0.4rem solid var(--dynamic-color-7);
+}
+blockquote > p , blockquote > p > a{
+  font-family: 'Open Sans', sans-serif;
+  color: var(--dt-color-1);
+}
+a{
+  font-weight: 500;
+}
+p > code {
+  width: 100%;
+  display: inline-block;
+  font-family: 'Fira Code', monospace !important; 
+  padding-left: 1.8rem;
+  color: var(--dt-color-7);
+}
+pre > code > span, pre > code > span > span{
+  font-family: 'Fira Code', monospace; 
+}
+code{
+  /* font-size: 2rem; */
+  background-color: var(--lt-color-2);
+  padding: 0.5rem ;
+  font-family: 'Fira Code', monospace;
 }
 .App{
   opacity: 1;
@@ -99,7 +140,7 @@ blockquote{
   padding: 1rem 8rem;
   transition: all ease 5000ms;
   gap: 1rem;
-
+  /* background-color: var(--lt-color-2); */
   background: linear-gradient(45deg, var(--lt-gradient-1), var(--lt-gradient-2), var(--lt-gradient-3), var(--lt-gradient-4));
   /* background-size: 400% 400%; */
   

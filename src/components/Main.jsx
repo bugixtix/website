@@ -38,7 +38,7 @@ export default function Main({darkMode}){
                     <Left className="Codeslash leftIcon"/>
                     <div className="Main__intro">
                         <h2 className="Main__title" style={darkMode ? {color:'var(--white)'} : {}} > {title}</h2>
-                        <h3 className="Main__description" style={darkMode ? {color:'var(--white)'} : {}}> {description}</h3>
+                        <h6 className="Main__description" style={darkMode ? {color:'var(--white)'} : {}}> {description}</h6>
                         <Link id="Link" to={'https://github.com/bugixtix'} className="Main__aboutButton">{btnText1} </Link>
                     </div>
                     <Slash className="Codeslash slashIcon"/>

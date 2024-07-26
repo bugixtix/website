@@ -10,7 +10,7 @@ import { PiArticleNyTimes as ShowAll } from "react-icons/pi";
 
 import BlogData from '../Blog.json'
 
-export default function Blog({currentIndex, currentIndex$, searchQuery, searchQuery$}){
+export default function Blog({currentIndex, currentIndex$, searchQuery, searchQuery$,darkMode}){
 
     var [articlesShortInfo, articlesShortInfo$] = useState({id:"", title:"",img:""})
 
