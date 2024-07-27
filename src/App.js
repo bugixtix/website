@@ -25,7 +25,7 @@ import BlogData from './Blog.json';
 
 
 function App() {
-  var [darkMode, darkMode$] = useState(false)
+  var [darkMode, darkMode$] = useState(P=>(JSON.parse(localStorage.getItem('darkMode')) !== undefined ? JSON.parse(localStorage.getItem('darkMode')) : false))
   var [currentPage, currentPage$] = useState("home")
   var [searchQuery, searchQuery$] = useState("")
 
@@ -37,6 +37,15 @@ function App() {
     return darkMode ? {backgroundColor:'white'} : {backgroundColor:'blue'}
   }
 
+  useEffect(()=>{
+
+  },[])
+  useEffect(()=>{
+    localStorage.setItem('darkMode',JSON.stringify(darkMode))
+  },[darkMode])
+  useEffect(()=>{
+
+  },[])
   useEffect(()=>{
     console.log(searchQuery)
   },[searchQuery])

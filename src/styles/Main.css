@@ -57,6 +57,7 @@
 .Main__codeslashText{
     font-size:1.8rem;
     font-style: italic;
+    border: none;
 }
 .Main__thirdCodeslash{
     display: flex; flex-direction: row; align-items: center; justify-content: center;
@@ -83,7 +84,8 @@
 
 }
 .Main__title{
-    font-size: 2rem;;
+    font-size: 2rem;
+    border:none;
 }
 .Main__description{
     padding: 1rem 0rem;
