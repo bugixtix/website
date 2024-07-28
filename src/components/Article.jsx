@@ -9,12 +9,15 @@ import { Link } from 'react-router-dom';
 
 import { IoShareSocial as Share } from "react-icons/io5";
 import { GrCompliance as Swoosh } from "react-icons/gr";
+import { TbArrowBigUpFilled as Top } from "react-icons/tb";
+import { TbArrowBigDownFilled as Down } from "react-icons/tb";
+
 
 export default function Article({ArticlesData, darkMode}){
 
     var [content, content$] = useState('')
     var [hrefCopied, hrefCopied$] = useState(false)
-
+    var [windowScrollY, windowScrollY$] = useState(0)
     var colors = {
         lt_1:'#F0F2F5',
         lt_2:'#DCE1E3',
@@ -31,6 +34,7 @@ export default function Article({ArticlesData, darkMode}){
         dt_6:'#ECF0F1',
         dt_7:'#020202',
     }
+
     useEffect(()=>{
         fetch('/articles/example.txt')
         .then(response=>response.text())
@@ -42,17 +46,42 @@ export default function Article({ArticlesData, darkMode}){
         const root = document.documentElement;
         const themeLink = document.getElementById('theme-link');
 
+        // change css colors in dark mode
         !darkMode ? root.style.setProperty('--dynamic-color-1', colors.dt_1)&&root.style.setProperty('--dynamic-color-2', colors.dt_2)&&root.style.setProperty('--dynmaic-color-3', colors.dt_3)&&root.style.setProperty('--dynmaic-color-4', colors.dt_4)&&root.style.setProperty('--dynmaic-color-5', colors.dt_5)&&root.style.setProperty('--dynmaic-color-6', colors.dt_6)&&root.style.setProperty('--dynmaic-color-7', colors.dt_7) : root.style.setProperty('--dynamic-color-1',colors.lt_1)&&root.style.setProperty('--dynamic-color-2',colors.lt_2)&&root.style.setProperty('--dynamic-color-3',colors.lt_3)&&root.style.setProperty('--dynamic-color-4',colors.lt_4)&&root.style.setProperty('--dynamic-color-5',colors.lt_5)&&root.style.setProperty('--dynamic-color-6',colors.lt_6)&&root.style.setProperty('--dynamic-color-7',colors.lt_7)
 
+        // change code-tag theme in dark mode
         darkMode ?  themeLink.href = 'https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow-night-blue.min.css' : themeLink.href = 'https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/foundation.css'
-        // solarized_light
+        
     },[darkMode])
+
+    useEffect(()=>{
+        document.addEventListener('scroll',()=>{
+            windowScrollY$(window.scrollY)
+        })
+    },[windowScrollY])
+
+    // function for copy href to clipboard
     var DoCopyToClipboard = () =>{
         navigator.clipboard.writeText(window.location.href);
         hrefCopied$(true)
     }
+    //
+    var DoDynamicScroll = () =>{
+        windowScrollY <= 100 ? 
+            window.scrollTo({
+                top:document.body.scrollHeight,
+                behavior:'smooth'
+            }) 
+            : 
+            window.scrollTo({
+                top:0,
+                behavior:'smooth'
+            })
+        
+    }
     return(
         <div className='Article'>
+            <div className='scrollToTheTop' onClick={DoDynamicScroll}>{windowScrollY <= 100 ? <Down/> : <Top/>}</div>
             <div className='Article__imgSection'>
                 <div className='Article__imgSection_textContainer'>
                     <h2 className='Article__imgSection_title'> {ArticlesData.title} </h2>
@@ -100,8 +129,10 @@ export default function Article({ArticlesData, darkMode}){
 export function RelatedArticle({ArticlesData}){
     var img = ArticlesData.img || '/'
     var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+    useEffect(()=>{console.log(`/blog/article/${ArticlesData.title.replace(/ /g, '_').toLowerCase()}`)},[])
     return(
-        <Link className='Article__relatedArticle'>
+        <Link className='Article__relatedArticle' to={`/blog/article/${ArticlesData.title.replace(/ /g, '_').toLowerCase()}`}>
             <div className='Article__relatedArticleImgContainer'>
                 <img className='Article__relatedArticleImg' src={img}/>
             </div>

@@ -63,7 +63,7 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
     }
     useEffect(()=>{
         articlesShortInfo$(BlogData[currentIndex])
-        console.log(currentIndex)
+        // console.log(currentIndex)
     },[currentIndex])
 
     return(
