@@ -67,8 +67,9 @@ export default function Gallery ({darkMode}){
             <div className="Gallery__container">
                 {
                     GalleryPictures.map(picture=>(
-                        <div key={picture.id} onClick={()=>DoOpenImage(picture)}>
+                        <div className="Gallery__itemContainer" key={picture.id} onClick={()=>DoOpenImage(picture)}>
                             <img src={picture.img} className="Gallery__item" />
+                            <span className="Gallery__itemTitle"> <span>{picture.title || 'IXTIX Gallery'}</span></span>
                         </div>    
                         ))
                 }
@@ -79,7 +80,7 @@ export default function Gallery ({darkMode}){
                             </div>
                             <div className="Gallery__popupSecondSection">
                                 <Left className="Gallery__leftSvg" onClick={()=>DoChangeImage("previous")}/>
-                                <img src={selectedImage.img} className={`Gallery__popupItem ${fadeImage ? 'popup-fadein' : 'popup-fadeout'} ${fadePopup ? 'show-popup' : 'hide-popup'} `}/>
+                                <img src={selectedImage.img} className={`Gallery__popupItem ${fadeImage ? 'popup-fadein' : 'popup-fadeout'} `}/>
                                 <Right className="Gallery__rightSvg" onClick={()=>DoChangeImage("next")}/>
                             </div>
                         </div>
