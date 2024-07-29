@@ -63,7 +63,7 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
     var previousArticle = () =>{
         fadeImg$(false);
         setTimeout(()=>{
-            currentIndex$((p)=>(p === totalArticles - 1 ? 0 : p + 1));
+            currentIndex$((p)=>(p === 0 ? totalArticles-1 : p - 1));
             fadeImg$(true)
         },1000)
         clearInterval(intervalRef.current)
