@@ -36,6 +36,11 @@ export default function Article({ArticlesData, darkMode}){
     }
 
     useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        })
+        //
         fetch('/articles/example.txt')
         .then(response=>response.text())
         .then(text=>content$(text))
@@ -130,7 +135,7 @@ export function RelatedArticle({ArticlesData}){
     var img = ArticlesData.img || '/'
     var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
-    useEffect(()=>{console.log(`/blog/article/${ArticlesData.title.replace(/ /g, '_').toLowerCase()}`)},[])
+    // useEffect(()=>{console.log(`/blog/article/${ArticlesData.title.replace(/ /g, '_').toLowerCase()}`)},[])
     return(
         <Link className='Article__relatedArticle' to={`/blog/article/${ArticlesData.title.replace(/ /g, '_').toLowerCase()}`}>
             <div className='Article__relatedArticleImgContainer'>

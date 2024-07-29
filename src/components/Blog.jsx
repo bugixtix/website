@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {Link, useNavigate} from 'react-router-dom'
 
 
@@ -13,6 +13,8 @@ import BlogData from '../Blog.json'
 export default function Blog({currentIndex, currentIndex$, searchQuery, searchQuery$,darkMode}){
 
     var [articlesShortInfo, articlesShortInfo$] = useState({id:"", title:"",img:""})
+    var [fadeImg, fadeImg$] = useState(true)
+    var intervalRef = useRef(null)
 
     var navigate = useNavigate();
     
@@ -43,9 +45,13 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
 
         !darkMode ? root.style.setProperty('--dynamic-color-1', colors.dt_1)&&root.style.setProperty('--dynamic-color-2', colors.dt_2)&&root.style.setProperty('--dynmaic-color-3', colors.dt_3)&&root.style.setProperty('--dynmaic-color-4', colors.dt_4)&&root.style.setProperty('--dynmaic-color-5', colors.dt_5)&&root.style.setProperty('--dynmaic-color-6', colors.dt_6)&&root.style.setProperty('--dynmaic-color-7', colors.dt_7) : root.style.setProperty('--dynamic-color-1',colors.lt_1)&&root.style.setProperty('--dynamic-color-2',colors.lt_2)&&root.style.setProperty('--dynamic-color-3',colors.lt_3)&&root.style.setProperty('--dynamic-color-4',colors.lt_4)&&root.style.setProperty('--dynamic-color-5',colors.lt_5)&&root.style.setProperty('--dynamic-color-6',colors.lt_6)&&root.style.setProperty('--dynamic-color-7',colors.lt_7)
     },[darkMode])
+    
+    
+    //
     var showArticle = (id) =>{
         // Not necessary
     }
+    //
     var searchWithEnter = (e) =>{
         if(e.key==='Enter'){
             search()
@@ -55,27 +61,46 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
         navigate('/search-result',{state:{searchQuery:searchQuery}})   
     }
     var previousArticle = () =>{
-        currentIndex$((p)=>(p === 0 ? totalArticles - 1 : p - 1));
+        fadeImg$(false);
+        setTimeout(()=>{
+            currentIndex$((p)=>(p === totalArticles - 1 ? 0 : p + 1));
+            fadeImg$(true)
+        },1000)
+        clearInterval(intervalRef.current)
     }  
 
     var nextArticle = () =>{
-        currentIndex$((p)=>(p === totalArticles - 1 ? 0 : p + 1));
+        fadeImg$(false);
+        setTimeout(()=>{
+            currentIndex$((p)=>(p === totalArticles - 1 ? 0 : p + 1));
+            fadeImg$(true)
+        },1000)
+        clearInterval(intervalRef.current)
     }
     useEffect(()=>{
         articlesShortInfo$(BlogData[currentIndex])
-        // console.log(currentIndex)
     },[currentIndex])
+    useEffect(()=>{
+        intervalRef.current = setInterval(()=>{
+            fadeImg$(false);
+            setTimeout(()=>{
+                currentIndex$((p)=>(p === 0 ? totalArticles - 1 : p - 1));
+                fadeImg$(true)
+            },1000)
+        },5000)
 
+        return()=>clearInterval(intervalRef.current)
+    },[])
     return(
         <div className="Blog">
 
             {/*MAIN SECTION */}
-            <div className="Blog__main">
-                <h2 className="Blog__mainTitle"> {articlesShortInfo.title || "Loading"}</h2>
+            <div className={`Blog__main`}>
+            <Link to={`./article/${articlesShortInfo.title.replace(/ /g, "_").toLowerCase() || '#'}`} id="Link" className="Blog__mainTitleLink"><h2 className={`Blog__mainTitle`}> {articlesShortInfo.title || "Loading"} </h2></Link>
                 <div className="Blog__mainSection">
                     <Left className="Blog__leftSvg" onClick={previousArticle}/>
-                    <Link className="Blog__imgLink" to={`./article/${articlesShortInfo.title.replace(/ /g, "_").toLowerCase() || '#'}`}>
-                        <img className="Blog__mainImg" src={articlesShortInfo.img||''} onClick={showArticle} />
+                    <Link className={`Blog__imgLink ${fadeImg ? 'fade-in' : 'fade-out'}`} to={`./article/${articlesShortInfo.title.replace(/ /g, "_").toLowerCase() || '#'}`} >
+                        <img className={`Blog__mainImg`} src={articlesShortInfo.img||''} onClick={showArticle} />
                     </Link>
                     <Right className="Blog__rightSvg" onClick={nextArticle}/>
                 </div>
@@ -123,7 +148,7 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
             {/* Show all articles -button */}
 
             <div className="Blog__bottomSection">
-                <Link to="/blog/articles" id="Link" className="Blog__bottomSectionLink"> <ShowAll className="Blog__bottomSectionSvg"/>  <p className="Blog__bottomSectionText">Show All Articles</p> </Link>
+                <Link to="/blog/articles" id="Link" className="Blog__bottomSectionLink">  <p className="Blog__bottomSectionText">Show All Articles</p> </Link>
             </div>
             
         </div>

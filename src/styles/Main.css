@@ -28,7 +28,12 @@
     background-size: cover;
 
     transition: all ease 5000ms;
-    
+}
+.Main__darkBackground{
+    background-image: url('../images/abstractBackground_dark.jpg');
+    background-position: 100%;
+    background-size: cover;
+    filter: blur(0.1rem);
 }
 .Main__container1{
     z-index: 1;

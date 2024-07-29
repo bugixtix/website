@@ -93,7 +93,7 @@ export default function Contact({darkMode}){
         <div className="Contact">
             <div className="Contact__container" style={darkMode ? {boxShadow:'none'} : {}}>
 
-                <div className="Contact__background" style={darkMode ? {filter:'brightness(50%)'} : {filter:'brightness(100%)'}}></div>
+                <div className={`Contact__background ${darkMode&& 'Contact__darkBackground'}`}></div>
 
                 <div className="Contact__wrapper">
 

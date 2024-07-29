@@ -25,7 +25,12 @@
     background-size: cover;
     border-radius: 1rem;
     z-index: 1;
-
+}
+.Contact__darkBackground{
+    background-image: url(../images/contactUsBackground_dark.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: blur(0.2rem); */
 }
 .Contact__wrapper{
     z-index: 2;

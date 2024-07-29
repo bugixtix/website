@@ -30,6 +30,13 @@
     transition:all ease 5000ms;
     border-radius: 0.5rem;
 }
+.About__darkBackground{
+    background-image: url("../images/aboutBackground_dark.jpg");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(0.1rem);
+}
 .About__textContainer{
     display: flex; flex-direction: column ; align-items: flex-start; justify-content: center; 
     flex: 1.4;

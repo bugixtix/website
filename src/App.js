@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Article from './components/Article';
 import AllArticles from './components/AllArticles'
 import SearchResult from './components/SearchResult';
+import Gallery from './components/Gallery';
 
 import './App.css';
 import './styles/Navbar.css'
@@ -20,6 +21,7 @@ import './styles/About.css'
 import './styles/Contact.css'
 import './styles/Blog.css'
 import './styles/Article.css'
+import './styles/Gallery.css'
 
 import BlogData from './Blog.json';
 
@@ -47,7 +49,7 @@ function App() {
 
   },[])
   useEffect(()=>{
-    console.log(searchQuery)
+    // console.log(searchQuery)
   },[searchQuery])
 
   return (
@@ -80,7 +82,10 @@ function App() {
                   darkMode={darkMode} darkMode$={darkMode$}
                   currentPage={currentPage} currentPage$={currentPage$}
             />}/>
-            
+            <Route path="/gallery" element={
+              <Gallery
+                darkMode={darkMode} darkMode$={darkMode$}
+              />}/>
             {
               BlogData.map(oneBlogData=>{
                 return(

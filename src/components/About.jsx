@@ -9,7 +9,7 @@ export default function About({darkMode}){
     return(
         <div className="About">
             <div className="About__container" style={darkMode ? {boxShadow:'none'} :{}}>
-                <div className="About__background" style={darkMode ? {filter:'brightness(40%)'} : {filter:'brightness(100%)'}}></div>
+                <div className={`About__background ${darkMode && 'About__darkBackground'}`}></div>
                 <div className="About__textContainer">
                     <h2 className="About__title" style={darkMode ? {color:'var(--white)'} : {}}>{title}</h2>
                     <p className="About__text" style={darkMode ? {color:'var(--white)'} : {}}>{text}</p>

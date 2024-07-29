@@ -17,7 +17,7 @@ export default function Main({darkMode}){
 
             <div className="Main__container0" style={darkMode ? {boxShadow:'none'} : {}} >
 
-            <div className="Main__container0Background"  style={darkMode ? {filter:'brightness(35%)'} : {filter:'brightness(100%)'}}>
+            <div className={`Main__container0Background ${darkMode && 'Main__darkBackground'}`} >
             </div>
 
             <div className="Main__container1">
