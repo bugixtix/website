@@ -22,6 +22,7 @@ import './styles/Contact.css'
 import './styles/Blog.css'
 import './styles/Article.css'
 import './styles/Gallery.css'
+import './styles/AllArticles.css'
 
 import BlogData from './Blog.json';
 

@@ -2,19 +2,73 @@
 
 [
     {
-        "id":1 ,
+        "id":0 ,
         "title":"Javascript Methods",
         "img":"/images/javascriptMethods.png",
         "description":"The most common methods in javascript"
     },
     {
-        "id":2 ,
+        "id":1 ,
         "title":"NodeJS introduction",
         "img":"/images/nodejs.jpg",
         "description":"An introduction to NodeJs and the important libraries such as express, os etc."
     },
     {
-        "id":3,
+        "id":2,
+        "title":"Must-know CSS tricks",
+        "img":"/images/cssTricks.jpg",
+        "description":"Here are some css tricks"
+    },
+    {
+        "id":3 ,
+        "title":"Javascript Methods",
+        "img":"/images/javascriptMethods.png",
+        "description":"The most common methods in javascript"
+    },
+    {
+        "id":4 ,
+        "title":"NodeJS introduction",
+        "img":"/images/nodejs.jpg",
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+    },
+    {
+        "id":5,
+        "title":"Must-know CSS tricks",
+        "img":"/images/cssTricks.jpg",
+        "description":"Here are some css tricks"
+    },
+    {
+        "id":6 ,
+        "title":"Javascript Methods",
+        "img":"/images/javascriptMethods.png",
+        "description":"The most common methods in javascript"
+    },
+    {
+        "id":7 ,
+        "title":"NodeJS introduction",
+        "img":"/images/nodejs.jpg",
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+    },
+    {
+        "id":8,
+        "title":"Must-know CSS tricks",
+        "img":"/images/cssTricks.jpg",
+        "description":"Here are some css tricks"
+    },
+    {
+        "id":9,
+        "title":"Javascript Methods",
+        "img":"/images/javascriptMethods.png",
+        "description":"The most common methods in javascript"
+    },
+    {
+        "id":10,
+        "title":"NodeJS introduction",
+        "img":"/images/nodejs.jpg",
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+    },
+    {
+        "id":11,
         "title":"Must-know CSS tricks",
         "img":"/images/cssTricks.jpg",
         "description":"Here are some css tricks"
