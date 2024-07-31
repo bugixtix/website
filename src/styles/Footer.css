@@ -9,6 +9,8 @@
     border-radius:1.8rem;
     border: 0.2rem solid var(--color-1);
     box-shadow: 4px 4px 8px var(--lt-color-5);
+    transition: filter ease 1000ms;
+    /* filter: blur(0); */
 }
 
 .Footer_logoContainer{

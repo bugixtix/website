@@ -162,6 +162,7 @@ code{
 
 .filter-blur{
   filter: blur(1rem);
+  pointer-events: none;
 }
 
 @-webkit-keyframes gradientBackground {

@@ -33,7 +33,8 @@ function App() {
   var [darkMode, darkMode$] = useState(P=>(JSON.parse(localStorage.getItem('darkMode')) !== undefined ? JSON.parse(localStorage.getItem('darkMode')) : false))
   var [currentPage, currentPage$] = useState("home")
   var [searchQuery, searchQuery$] = useState("")
-  var AppMainHeight = useRef(null)
+  var AppMain = useRef(null)
+
 
   // index for current article
   var [currentIndex, currentIndex$] = useState(BlogData.length - 1 || 0)
@@ -62,12 +63,17 @@ function App() {
         <Navbar 
           darkMode={darkMode} darkMode$={darkMode$}
           currentPage={currentPage} currentPage$={currentPage$}
-          AppMainHeight={AppMainHeight}
+          AppMain={AppMain}
         />
-        <div className='AppMain' ref={AppMainHeight}> 
+        <div className='AppMain' ref={AppMain}> 
 
           <Routes>
-            <Route path="/" element={
+            <Route path={"/home" || "/"} element={
+              <Main
+                darkMode={darkMode} darkMode$={darkMode$}
+                currentPage={currentPage} currentPage$={currentPage$}
+              />} />
+            <Route path={"/" || "/"} element={
               <Main
                 darkMode={darkMode} darkMode$={darkMode$}
                 currentPage={currentPage} currentPage$={currentPage$}

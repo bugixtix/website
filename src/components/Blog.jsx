@@ -15,7 +15,7 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
     var [articlesShortInfo, articlesShortInfo$] = useState({id:"", title:"",img:""})
     var [fadeImg, fadeImg$] = useState(true)
     var intervalRef = useRef(null)
-
+    
     var navigate = useNavigate();
     
     var totalArticles = BlogData.length;
