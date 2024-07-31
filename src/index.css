@@ -137,6 +137,7 @@ code{
   font-family: 'Fira Code', monospace;
 }
 .App{
+  overflow-x: hidden;
   opacity: 1;
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: space-between;
@@ -154,7 +155,14 @@ code{
   animation: gradientBackground 120s linear infinite, showApp 3s linear forwards; */
   
 }
+.AppMain{
+  filter: none;
+  transition: filter ease 1000ms;
+}
 
+.filter-blur{
+  filter: blur(1rem);
+}
 
 @-webkit-keyframes gradientBackground {
   0%{background-position:0% 0%}

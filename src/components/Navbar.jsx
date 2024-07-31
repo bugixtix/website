@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import { HiOutlineBugAnt as Bug} from "react-icons/hi2";
@@ -15,34 +15,36 @@ import { GrContact as Contact } from "react-icons/gr";
 import { GrGallery as Gallery } from "react-icons/gr";
 
 
-export default function Navbar({darkMode, darkMode$, currentPage, currentPage$}){
+export default function Navbar({darkMode, darkMode$, currentPage, currentPage$, AppMainHeight}){
 
     var [navOptions, navOptions$] = useState(false)
     var [screen,screen$] = useState(window.innerWidth)
+    var menuRef = useRef(null)
     function changeCurrentPage(e){
         
         currentPage$(e.target.getAttribute('name'))
     } 
+
     useEffect(()=>{
-        var home_li = document.querySelector('.home__li')
-        var blog_li = document.querySelector('.blog__li')
-        var contact_li = document.querySelector('.contact__li')
-        var about_li= document.querySelector('.about__li')
-        var gallery_li = document.querySelector('.gallery__li')
-        home_li.classList.remove('selectedLi');
-        blog_li.classList.remove('selectedLi');
-        contact_li.classList.remove('selectedLi');
-        about_li.classList.remove('selectedLi');
-        gallery_li.classList.remove('selectedLi');
-        currentPage == 'home' ? home_li.classList.add('selectedLi') : currentPage == 'blog' ? blog_li.classList.add('selectedLi') : currentPage == 'about' ? about_li.classList.add('selectedLi') : currentPage == 'contact' ? contact_li.classList.add('selectedLi') : currentPage == 'gallery' ? gallery_li.classList.add('selectedLi') : console.log('hi')
-        // console.log(gallery_li)
-    },[currentPage])
+        var AppMain = document.querySelector('.AppMain')
+        navOptions ? AppMain.classList.toggle('filter-blur') : AppMain.classList.toggle('filter-blur');
+    },[navOptions])
 
     //
     function DoChangeScreenWidth(){
         screen$(window.innerWidth);
+        navOptions(false)
         console.log(window.innerWidth)
     }
+    //
+    useEffect(()=>{
+        // var AppMain = document.querySelector('.AppMain')
+        // console.log(AppMain.offsetHeight)
+        // menuRef.current.style.height = AppMain.offsetHeight + 'px';
+        console.log(AppMainHeight)
+        menuRef.current.style.height = AppMainHeight.current.offsetHeight + 'px';
+    },[currentPage])
+    // !!
     //
     useEffect(()=>{
         window.addEventListener('resize', DoChangeScreenWidth)
@@ -57,6 +59,10 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$})
     function DoToggleNavOptions(){
         navOptions$(p=>(!p))
     }
+    //
+    function DoHideMenu(){
+        navOptions ? navOptions$(false) : console.log('__DoHideMenu')
+    }
     return(
 
         <header className="Navbar__header" style={darkMode ? {boxShadow:'none'} : {}}>
@@ -70,12 +76,12 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$})
                 <p className="Navbar__options" style={darkMode ? {color:'var(--white)'} : {}} onClick={DoToggleNavOptions}> 
                     {navOptions ? <Close/> : <Options/>}
                 </p>
-                <ul className={`Navbar__ul ${navOptions&&'ul_smallScreenShow'}`} style={{backgroundColor:darkMode&&screen<=768?'var(--black)': (darkMode&&screen>768 || !darkMode&&screen>768) ? 'var(--transparent)': 'var(--white)'}}>
-                    <NavLink id="Link" to={'/'}>  <li className={`Navbar__li home__li`} name={'home'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}><Home/> &nbsp; Home </li></NavLink>
-                    <NavLink id="Link" to={'/blog'}><li className={`Navbar__li blog__li`} name={'blog'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Blog/> &nbsp; Blog </li></NavLink> 
-                    <NavLink id="Link" to={'/gallery'}><li className={`Navbar__li gallery__li`} name={'gallery'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Gallery/> &nbsp; Gallery </li></NavLink>
-                    <NavLink id="Link" to={'/contact'}><li className={`Navbar__li contact__li`} name={'contact'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Contact/> &nbsp; Contact </li></NavLink>
-                    <NavLink id="Link" to={'/about'}><li className={`Navbar__li about__li`} name={'about'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Info/> &nbsp; About </li></NavLink>
+                <ul ref={menuRef} className={`Navbar__ul ${navOptions&&'ul_smallScreenShow'}`} style={{backgroundColor:darkMode&&screen<=768?'var(--black)': (darkMode&&screen>768 || !darkMode&&screen>768) ? 'var(--transparent)': 'var(--white)'}}>
+                    <NavLink id="Link" to={'/'} onClick={DoHideMenu}>  <li className={`Navbar__li home__li`} name={'home'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}><Home/> &nbsp; Home </li></NavLink>
+                    <NavLink id="Link" to={'/blog'} onClick={DoHideMenu}><li className={`Navbar__li blog__li`} name={'blog'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Blog/> &nbsp; Blog </li></NavLink> 
+                    <NavLink id="Link" to={'/gallery'} onClick={DoHideMenu}><li className={`Navbar__li gallery__li`} name={'gallery'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Gallery/> &nbsp; Gallery </li></NavLink>
+                    <NavLink id="Link" to={'/contact'} onClick={DoHideMenu}><li className={`Navbar__li contact__li`} name={'contact'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Contact/> &nbsp; Contact </li></NavLink>
+                    <NavLink id="Link" to={'/about'} onClick={DoHideMenu}><li className={`Navbar__li about__li`} name={'about'} onClick={changeCurrentPage} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> <Info/> &nbsp; About </li></NavLink>
 
                     <li className="Navbar__li" onClick={setDarkTheme} style={darkMode ? {color:'var(--dt-color-6)'} : {}}> {darkMode ? <Sun/> : <Moon/>}</li>
                 </ul>

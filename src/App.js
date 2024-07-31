@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useRef, useState} from 'react'
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
 
 
@@ -33,6 +33,7 @@ function App() {
   var [darkMode, darkMode$] = useState(P=>(JSON.parse(localStorage.getItem('darkMode')) !== undefined ? JSON.parse(localStorage.getItem('darkMode')) : false))
   var [currentPage, currentPage$] = useState("home")
   var [searchQuery, searchQuery$] = useState("")
+  var AppMainHeight = useRef(null)
 
   // index for current article
   var [currentIndex, currentIndex$] = useState(BlogData.length - 1 || 0)
@@ -61,7 +62,10 @@ function App() {
         <Navbar 
           darkMode={darkMode} darkMode$={darkMode$}
           currentPage={currentPage} currentPage$={currentPage$}
+          AppMainHeight={AppMainHeight}
         />
+        <div className='AppMain' ref={AppMainHeight}> 
+
           <Routes>
             <Route path="/" element={
               <Main
@@ -72,28 +76,29 @@ function App() {
               <About
                 darkMode={darkMode} darkMode$={darkMode$}
                 currentPage={currentPage} currentPage$={currentPage$}
-              />}/>
+                />}/>
             <Route path="/blog" element={
               <Blog
-                darkMode={darkMode} darkMode$={darkMode$}
-                currentPage={currentPage} currentPage$={currentPage$}
+              darkMode={darkMode} darkMode$={darkMode$}
+              currentPage={currentPage} currentPage$={currentPage$}
                 currentIndex={currentIndex} currentIndex$={currentIndex$}
                 searchQuery={searchQuery} searchQuery$={searchQuery$}
               />}/>
             <Route path="/contact" element={
               <GetInTouch
-                  darkMode={darkMode} darkMode$={darkMode$}
-                  currentPage={currentPage} currentPage$={currentPage$}
-            />}/>
+              darkMode={darkMode} darkMode$={darkMode$}
+              currentPage={currentPage} currentPage$={currentPage$}
+              />}/>
             <Route path="/gallery" element={
               <Gallery
-                darkMode={darkMode} darkMode$={darkMode$}
+              darkMode={darkMode} darkMode$={darkMode$}
+              currentPage={currentPage} currentPage$={currentPage$}
               />}/>
             {
               BlogData.map(oneBlogData=>{
                 return(
                   <Route path={`blog/article/${oneBlogData.title.replace(/ /g, "_").toLowerCase()}`} element={
-                  <Article 
+                    <Article 
                       ArticlesData={oneBlogData}
                       darkMode={darkMode} darkMode$={darkMode$}
                   />} 
@@ -105,24 +110,25 @@ function App() {
           <Route
             path='/blog/articles' element={
               <AllArticles
-                darkMode={darkMode} darkMode$={darkMode$}
-            />}
-          />
+              darkMode={darkMode} darkMode$={darkMode$}
+              />}
+              />
 
           <Route
             path='/search-result' element={
               <SearchResult
-                searchQuery={searchQuery} searchQuery$={searchQuery$} 
+              searchQuery={searchQuery} searchQuery$={searchQuery$} 
               />
             }
-          />
+            />
               
 
           </Routes>
+          </div>
         <Footer
           darkMode={darkMode} darkMode$={darkMode$}
           currentPage={currentPage} currentPage$={currentPage$}
-        />
+          />
       </BrowserRouter>
     </div>
   );

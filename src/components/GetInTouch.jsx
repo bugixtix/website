@@ -113,12 +113,12 @@ export default function GetInTouch({darkMode}){
                             <p className="GetInTouch__subjectText"> 
                                 <Subject/> Subject
                             </p>
-                            <textarea type="text" className="GetInTouch__subjectField" onFocus={elementFocused} value={message._subject} onChange={changeValue}> </textarea>
+                            <textarea type="text" className="GetInTouch__subjectField" onFocus={elementFocused} value={message._subject} onChange={changeValue} rows={1}> </textarea>
                         </div>
                         
                         <div className="GetInTouch__messageComponent">
-                            <p className="GetInTouch__messageText"> <Message/> Your message</p>
-                            <textarea className="GetInTouch__messageField" onFocus={elementFocused} value={message._message} onChange={changeValue}> </textarea>
+                            <label className="GetInTouch__messageText" htmlFor="GetInTouch__messageField"> <Message/> Your message</label>
+                            <textarea id="GetInTouch__messageField" className="GetInTouch__messageField" value={message._message} onChange={changeValue}> </textarea>
                         </div>
 
                         <button className="GetInTouch__sendButton" onClick={formSubmit}> <span><Send/></span> OPEN IN OUTLOOK </button>

@@ -45,7 +45,7 @@
 .GetInTouch__form{
 
     display: flex; flex-direction: column ; align-items: center ; justify-content: flex-start; 
-    gap: 2.4rem;
+    gap: 3.4rem;
     padding: 3rem 2rem;
     background-color: var(--color-10);
     border-radius: 0.4rem;
@@ -63,7 +63,7 @@
 }
 .GetInTouch__components{
     display: flex; flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
 }
 .GetInTouch__subjectComponent, .GetInTouch__messageComponent{
     position: relative;
@@ -74,9 +74,9 @@
     font-size: 1.4rem;
     /* margin: 1rem 0rem; */
 }
-.GetInTouch__subjectText, .GetInTouch__messageText{
+.GetInTouch__subjectText{
     position: absolute;
-    top: 1.5rem;
+    top: 0.2rem;
     transition: all ease 800ms;
     z-index: 1;
     display: flex; flex-direction: row; justify-content: flex-start;
@@ -88,11 +88,26 @@
 
     padding: 0.4rem 0rem;
 }
-.GetInTouch__subjectField, .GetInTouch__messageField{
+.GetInTouch__messageText{
+    position: relative;
+    /* top: -2.5rem;     */
+    transition: all ease 800ms;
+    z-index: 1;
+    display: flex; flex-direction: row; justify-content: flex-start;
+    gap: 1rem;
+    color: var(--white);
+    /* border-bottom: 0.2rem solid black; */
+
+    width: 100%;
+
+    padding: 0.4rem 0rem;
+}
+.GetInTouch__subjectField{
     z-index: 2;
     background-color: var(--transparent);
     padding: 0.4rem;
     /* border-radius: 0.5rem; */
+    /* border: none; */
     border: none;
     border-bottom: 0.3rem solid var(--dynamic-color-6);
     width: 25rem;
@@ -107,12 +122,32 @@
         outline: none;
     }
 }
+.GetInTouch__messageField{
+    z-index: 2;
+    background-color: var(--transparent);
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    /* border: none; */
+    border: 0.2rem solid var(--dynamic-color-6);
+    width: 25rem;
+    transition: all ease 400ms;
+    color: var(--dynamic-color-6);
+    min-height: 3rem;
+    height: auto;
+    max-height: 10rem;
+    overflow-y: visible;
+    &:focus, &:hover{
+        /* box-shadow: 0.3rem 0.3rem 0px 0px var(--lt-color-3) inset, -0.3rem -0.3rem 0px 0px var(--lt-color-3 ) inset; */
+        outline: none;
+    }
+}
+
 
 .GetInTouch__sendButton{
 
     width: 25rem ;
     padding: 0.4rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 0.4rem;
     /* border: none; */
     cursor: pointer;
@@ -135,7 +170,7 @@
     }
 }
 .GetInTouch__transform{
-    transform: translateY(-3.8rem);
+    transform: translateY(-2.5rem);
     border: none;
     && + textarea{
         border: 2px solid white;
@@ -168,6 +203,7 @@
     width: 100%;
     gap: 1rem;
     & .GetInTouch__splitterText{
+        width: 100%;
         font-size: 2rem;
         border-bottom: 0.2rem solid var(--dynamic-color-1) ;
         color: var(--dynamic-color-6);
