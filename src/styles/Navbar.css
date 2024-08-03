@@ -15,10 +15,7 @@
     padding: 0.5rem 1.6rem;
     border-radius:1.8rem;
     border: 0.2rem solid var(--color-1);
-    /* position: fixed; */
     box-shadow: 4px 4px 8px var(--lt-color-5);
-    /* filter: blur(0.2rem); */
-
 }
 
 .Navbar__container1{
@@ -70,7 +67,6 @@
     color: var(--dt-color-6);
 }
 .Navbar__options{
-    /* border: 0.2rem solid var(--dt-color-2); */
     font-size: 1.8rem;
     padding: 0.5rem 0.5rem 0.2rem 0.5rem;
     border-radius: 3rem;
@@ -96,11 +92,7 @@
     }
 }
 @media screen and (max-width:768px) and (min-width:600px){
-    .Navbar__ulContainer{
-        /* height: 90%;
-        position: fixed;
-        background-color: blue; */
-    }
+
     .Navbar__ul{
         position: fixed;
         flex-direction: column;
@@ -111,22 +103,15 @@
         opacity: 0;
         transform: translate(0);
         border: 0.2rem solid var(--color-1);
-        /* box-shadow: 2px 2px 2px 1px var(--lt-color-5); */
-        /* border-right: none; */
-        /* border-top-left-radius: 0.4rem;
-        border-bottom-left-radius: 0.4rem; */
         border-radius: 0.4rem;
         width: 15rem;
-        /* height: 100%; */
-        overflow: scroll;
-        /* background-color: var(--white); */
+        overflow-y:scroll;
     }
     ul > li:last-child{
             justify-content: center;
     }
     .Navbar__li{
         padding:1.5rem 2rem;
-        /* background-color: var(--lt-color-5); */
         font-size: 1.6rem;
         justify-content: flex-start;
         position: relative;
@@ -164,15 +149,9 @@
         opacity: 0;
         transform: translate(0);
         border: 0.2rem solid var(--color-1);
-        /* box-shadow: 2px 2px 2px 1px var(--lt-color-5); */
-        /* border-right: none; */
-        /* border-top-left-radius: 0.4rem;
-        border-bottom-left-radius: 0.4rem; */
         border-radius: 0.4rem;
         width: 15rem;
-        /* height: 100%; */
-        overflow: scroll;
-        /* background-color: var(--white); */
+        overflow-y:scroll ;
     }
     ul > li:last-child{
         justify-content: center;
@@ -190,7 +169,6 @@
     }
     .Navbar__li{
         padding:1.5rem 2rem;
-        /* background-color: var(--lt-color-5); */
         font-size: 1.6rem;
         justify-content: flex-start;
         position: relative;

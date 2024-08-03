@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Markdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
@@ -11,6 +11,7 @@ import { IoShareSocial as Share } from "react-icons/io5";
 import { GrCompliance as Swoosh } from "react-icons/gr";
 import { TbArrowBigUpFilled as Top } from "react-icons/tb";
 import { TbArrowBigDownFilled as Down } from "react-icons/tb";
+import rehypeRaw from 'rehype-raw';
 
 
 export default function Article({ArticlesData, darkMode}){
@@ -18,6 +19,7 @@ export default function Article({ArticlesData, darkMode}){
     var [content, content$] = useState('')
     var [hrefCopied, hrefCopied$] = useState(false)
     var [windowScrollY, windowScrollY$] = useState(0)
+
     var colors = {
         lt_1:'#F0F2F5',
         lt_2:'#DCE1E3',
@@ -100,7 +102,7 @@ export default function Article({ArticlesData, darkMode}){
             <div className='Article__mainSection'>
 
                     <div className='Article__mainSectionContainer'>
-                            <Markdown className={`markdown-content`} rehypePlugins={[rehypeHighlight]} remarkPlugins={[remarkGfm]}>{content}</Markdown>
+                            <Markdown className={`markdown-content`} rehypePlugins={[rehypeHighlight, rehypeRaw]} remarkPlugins={[remarkGfm]}>{content}</Markdown>
                     </div>
                     <div className='Article__userOpinionSection'>
                         <div className='Article__userOpinionShareButton' onClick={DoCopyToClipboard}>

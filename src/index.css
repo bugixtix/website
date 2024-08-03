@@ -94,6 +94,15 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+iframe{
+  border-radius: 0.4rem;
+  border: 0.2rem solid var(--dynamic-color-1);
+  height: 400px;
+  margin-bottom: 5rem;
+}
+iframe > #nav{
+  display: none;
+}
 #Link{
   text-decoration: none;
   /* color: var(--dt-color-1); */
