@@ -32,6 +32,8 @@ p > img {
     width: 100%; 
     padding-bottom: 4rem ;
     position: relative;
+    
+    /* transform: scale(0.1); */
 }
 .scrollToTheTop{
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -51,7 +53,9 @@ p > img {
 
     background-color: var(--transparent);
     z-index: 2;
+
 }
+
 .Article__imgSection{
     display: flex; flex-direction: column; 
     width: 100%;

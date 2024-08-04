@@ -8,6 +8,10 @@
     position: relative;
     border-radius: 0.4rem;
     overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
 }
 
 .Gallery__itemContainer{

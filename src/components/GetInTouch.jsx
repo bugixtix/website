@@ -15,6 +15,8 @@ export default function GetInTouch({darkMode}){
     var [showAlert, showAlert$] = useState(false)
     var [alertSection, alertSection$] = useState({show:false, text:''})
     var title = 'SEND ME AN EMAIL :)'
+    var [loading, loading$] = useState(true)
+
     // var PATH = 'http://localhost:5000/api/sendMessage'
     //
     function doNothing(){}
@@ -55,36 +57,11 @@ export default function GetInTouch({darkMode}){
             setTimeout(()=>alertSection$({text:'', show:false}), 5000)
         }
     },[alertSection])
-
-    
-    async function sendMessage(){
-        // try{
-        //     const res = await fetch(PATH, {
-        //         method:'POST',
-        //         headers: {
-        //             'Content-Type' : 'application/json',
-        //         },
-        //         body: JSON.stringify(message)
-        //     })
-        //     const data = await res.json()
-        //     console.log(data)
-        //     data.messageCode == 200 ? message$({_subject:'',_email:'',_message:''}) : doNothing()
-        // }catch(error_){console.log(error_)}
-    }
     //
-    // function validateEmail(email) {
-    //     const re = /\S+@\S+\.\S+/;
-    //     return re.test(String(email).toLowerCase());
-    //   }
-    //
-    // function validateForm() {
-    //     var { _email : email, _subject : name , _message } = message
-    //     if (!validateEmail(email)) return false;
-    //     if (name.trim() === '') return false;
-    //     if (_message.trim() === '') return false;
-    //     return true;
-    // }
-    
+    useEffect(()=>{
+        var timer = setTimeout(()=>{loading$(false)},0)
+        return ()=>clearTimeout(timer)
+    },[])
     //
     function changeValue(e){
         var {target} = e;
@@ -93,7 +70,7 @@ export default function GetInTouch({darkMode}){
             doNothing()
     }
     return(
-        <div className='GetInTouch'>
+        <div className={`GetInTouch ${!loading && 'fadeIn-start'}`}>
         
             <div className="GetInTouch__container" >
 

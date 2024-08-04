@@ -15,6 +15,7 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
     var [articlesShortInfo, articlesShortInfo$] = useState({id:"", title:"",img:""})
     var [fadeImg, fadeImg$] = useState(true)
     var intervalRef = useRef(null)
+    var [loading, loading$] = useState(true)
     
     var navigate = useNavigate();
     
@@ -46,6 +47,13 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
         !darkMode ? root.style.setProperty('--dynamic-color-1', colors.dt_1)&&root.style.setProperty('--dynamic-color-2', colors.dt_2)&&root.style.setProperty('--dynmaic-color-3', colors.dt_3)&&root.style.setProperty('--dynmaic-color-4', colors.dt_4)&&root.style.setProperty('--dynmaic-color-5', colors.dt_5)&&root.style.setProperty('--dynmaic-color-6', colors.dt_6)&&root.style.setProperty('--dynmaic-color-7', colors.dt_7) : root.style.setProperty('--dynamic-color-1',colors.lt_1)&&root.style.setProperty('--dynamic-color-2',colors.lt_2)&&root.style.setProperty('--dynamic-color-3',colors.lt_3)&&root.style.setProperty('--dynamic-color-4',colors.lt_4)&&root.style.setProperty('--dynamic-color-5',colors.lt_5)&&root.style.setProperty('--dynamic-color-6',colors.lt_6)&&root.style.setProperty('--dynamic-color-7',colors.lt_7)
     },[darkMode])
     
+    //
+    useEffect(()=>{
+        var timer = setTimeout(()=>{
+            loading$(false)
+          },0)
+          return ()=>clearTimeout(timer)
+    },[])
     
     //
     var showArticle = (id) =>{
@@ -92,7 +100,7 @@ export default function Blog({currentIndex, currentIndex$, searchQuery, searchQu
         return()=>clearInterval(intervalRef.current)
     },[])
     return(
-        <div className="Blog">
+        <div className={`Blog ${!loading && 'fadeIn-start'}`}>
 
             {/*MAIN SECTION */}
             <div className={`Blog__main`}>

@@ -3,6 +3,10 @@
 .Contact{
     display: flex ; flex-direction: column; align-items: center; justify-content: center; 
     flex: 1;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
 }
 
 .Contact__container{

@@ -10,6 +10,8 @@ export default function Gallery ({darkMode}){
     var [selectedImage, selectedImage$] = useState('true')
     var [fadeImage, fadeImage$] = useState(true)
     var [fadePopup, fadePopup$] = useState(false)
+    var [loading, loading$] = useState(true)
+
     var DoOpenImage = (image) =>{
         selectedImage$(image)
         DoFadePopup('in')
@@ -52,7 +54,11 @@ export default function Gallery ({darkMode}){
          DoPrevious() :
         console.log("__ DoChangeImage")
     }
-    
+    //
+    useEffect(()=>{
+        var timer = setTimeout(()=>{loading$(false)},0)
+        return ()=>clearTimeout(timer)
+    },[])
     //
     var DoEscape = (event) =>{
         event.key === "Escape" ? DoCloseImage() : console.log('__ DoEscape')
@@ -63,7 +69,7 @@ export default function Gallery ({darkMode}){
         return ()=>{ document.body.removeEventListener('keyup', DoEscape)}
     },[])
     return(
-        <div className="Gallery">
+        <div className={`Gallery ${!loading && 'fadeIn-start'}`}>
             <div className="Gallery__container">
                 {
                     GalleryPictures.map(picture=>(

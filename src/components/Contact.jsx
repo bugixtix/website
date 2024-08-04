@@ -12,6 +12,8 @@ export default function Contact({darkMode}){
     var [alertSection, alertSection$] = useState({show:false, text:''})
     var title = 'Get in touch :)'
     var PATH = 'http://localhost:5000/api/sendMessage'
+    var [loading, loading$] = useState(true)
+
     //
     function doNothing(){}
     //
@@ -88,9 +90,13 @@ export default function Contact({darkMode}){
             doNothing()
     }
     //
+    useEffect(()=>{
+        var timer = setTimeout(()=>{loading$(false)},0)
+        return ()=>clearTimeout(timer)
+    },[])//
 
     return(
-        <div className="Contact">
+        <div className={`Contact ${!loading && 'fadeIn-start'}`}>
             <div className="Contact__container" style={darkMode ? {boxShadow:'none'} : {}}>
 
                 <div className={`Contact__background ${darkMode&& 'Contact__darkBackground'}`}></div>

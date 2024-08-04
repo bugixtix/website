@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import development from '../images/development.png'
 import { FaChevronLeft as Left } from "react-icons/fa";
 import { FaChevronRight as Right} from "react-icons/fa";
 import { RxSlash as Slash} from "react-icons/rx";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 export default function Main({darkMode}){
 
@@ -11,9 +12,15 @@ export default function Main({darkMode}){
     var description = "I'm Ixtix, a passionate web developer with a passion for clean code and user-friendly designs :)"
     var btnText1 = "Take a look at my work"
     var btnText2 = "Say Hi"
+    var [loading, loading$] = useState(true)
+    useEffect(()=>{
+        var timer = setTimeout(()=>{loading$(false)},0)
+        return ()=>clearTimeout(timer)
+    },[])
+
     return(
 
-        <div className="Main">
+        <div className={`Main ${!loading && 'fadeIn-start'}`}>
 
             <div className="Main__container0" style={darkMode ? {boxShadow:'none'} : {}} >
 

@@ -7,6 +7,7 @@ export default function AllArticles({darkMode, darkMode$}){
     var [currentPage, currentPage$] = useState(1);
     var articlesPerPage = 9;
     var totalPages = Math.ceil(Articles.length / articlesPerPage);
+    var [loading, loading$] = useState(true)
 
     var colors = {
         lt_1:'#F0F2F5',
@@ -38,9 +39,13 @@ export default function AllArticles({darkMode, darkMode$}){
     var HandlePageChange = (pageNumber) =>{
         currentPage$(pageNumber)
     }
-
+    //
+    useEffect(()=>{
+        var timer = setTimeout(()=>{loading$(false)},0)
+        return ()=>clearTimeout(timer)
+    },[])
     return(
-        <div className="AllArticles">
+        <div className={`AllArticles ${!loading && 'fadeIn-start'}`}>
             <div className="AllArticles__container">
                 <h2> All Articles</h2>
                 <div className="AllArticles__articlesSection">

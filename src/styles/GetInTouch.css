@@ -3,6 +3,10 @@
 .GetInTouch{
     display: flex ; flex-direction: column; align-items: center; justify-content: center; 
     flex: 1;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
 }
 .GetInTouch__container{
     display: flex ; flex-direction: row-reverse; align-items: center; justify-content: space-around; 
@@ -151,7 +155,7 @@
     border-radius: 0.4rem;
     /* border: none; */
     cursor: pointer;
-    background-color: var(--dynamic-color-1);
+    background-color: var(--dt-color-1);
     transition:all ease 800ms;
     display: flex; flex-direction: row; align-items: center; justify-content: center;
     gap:0.5rem;

@@ -19,6 +19,7 @@ export default function Article({ArticlesData, darkMode}){
     var [content, content$] = useState('')
     var [hrefCopied, hrefCopied$] = useState(false)
     var [windowScrollY, windowScrollY$] = useState(0)
+    var [loading, loading$] = useState(true)
 
     var colors = {
         lt_1:'#F0F2F5',
@@ -66,6 +67,11 @@ export default function Article({ArticlesData, darkMode}){
             windowScrollY$(window.scrollY)
         })
     },[windowScrollY])
+    //
+    useEffect(()=>{
+        var timer = setTimeout(()=>{loading$(false)},0)
+        return ()=>clearTimeout(timer)
+    },[])
 
     // function for copy href to clipboard
     var DoCopyToClipboard = () =>{
@@ -86,8 +92,10 @@ export default function Article({ArticlesData, darkMode}){
             })
         
     }
-    return(
-        <div className='Article'>
+    return( 
+        
+        <div className={`Article`}>
+
             <div className='scrollToTheTop' onClick={DoDynamicScroll}>{windowScrollY <= 100 ? <Down/> : <Top/>}</div>
             <div className='Article__imgSection'>
                 <div className='Article__imgSection_textContainer'>

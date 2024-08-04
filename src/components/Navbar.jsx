@@ -28,8 +28,8 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$, 
     } 
     //
     useEffect(()=>{
-        var AppMain = document.querySelector('.AppMain')
-        var Footer = document.querySelector('.Footer')
+        var AppMain = document.querySelector('.AppMain') || document.createElement('div')
+        var Footer = document.querySelector('.Footer') || document.createElement('div')
         var DoBlur = (confirmation) =>{
             if(confirmation){
                 AppMain.classList.add('filter-blur'); 

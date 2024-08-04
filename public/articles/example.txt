@@ -18,10 +18,9 @@ greet('World');
 ``` 
 
 <iframe style="width: 100%;" scrolling="no" title="Getting started" src="https://codepen.io/bugixtix/embed/ExBWgJE?default-tab=result&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowfullscreen={true}>
-  See the Pen <a href="https://codepen.io/bugixtix/pen/ExBWgJE">
-  Getting started</a> by housam (<a href="https://codepen.io/bugixtix">@bugixtix</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+      <script src="/js/stopExecutionOnTimeout.js"></script>
+
 
 luctus fringilla purus. In augue nibh, convallis consequat dolor sit amet, eleifend sollicitudin lacus. Aliquam tincidunt erat nec massa efficitur interdum. Vestibulum mollis sem sem, at tincidunt ante ultrices in. Integer efficitur, dui vitae convallis dapibus, massa magna fringilla sem, eget iaculis urna augue vitae erat. Suspendisse ut condimentum arcu, eget finibus lorem. Donec risus nisl, sollicitudin in ipsum nec, euismod auctor sem. Nam sollicitudin felis nec dui rutrum facilisis. Maecenas vel vehicula mi. Integer hendrerit eros nisi, id dignissim mauris cursus nec.
 

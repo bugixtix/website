@@ -8,7 +8,7 @@ export default function SearchResult({}){
 
     return(
         <div className='SearchResult'>
-<h2>
+            <h2>
                 Search result for {searchQuery} comes here...
             </h2>
         </div>

@@ -3,6 +3,10 @@
 .About{
     display: flex; flex-direction: column; align-items: center ; justify-content: center;
     flex:1;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
 }
 .About__container{
     display: flex; flex-direction: row; align-items: center ; justify-content: center;
