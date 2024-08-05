@@ -3,9 +3,9 @@
 [
     {
         "id":0 ,
-        "title":"Javascript Methods",
+        "title":"Introduction To Javascript",
         "img":"/images/javascriptMethods.png",
-        "description":"The most common methods in javascript"
+        "description":"A short introduction to javascript"
     },
     {
         "id":1 ,

@@ -11,6 +11,7 @@ import { IoShareSocial as Share } from "react-icons/io5";
 import { GrCompliance as Swoosh } from "react-icons/gr";
 import { TbArrowBigUpFilled as Top } from "react-icons/tb";
 import { TbArrowBigDownFilled as Down } from "react-icons/tb";
+import BlogData from '../Blog.json'
 import rehypeRaw from 'rehype-raw';
 
 
@@ -132,9 +133,9 @@ export default function Article({ArticlesData, darkMode}){
                     <h4 className='Article__relatedArticleTitleText'>Related Articles</h4>
                 </div>
                 <div className='Article__relatedSectionWrapper'>
-                    <RelatedArticle ArticlesData={ArticlesData}/>
-                    <RelatedArticle ArticlesData={ArticlesData}/>
-                    <RelatedArticle ArticlesData={ArticlesData}/>
+                    <RelatedArticle ArticlesData={BlogData[BlogData.length-2]}/>
+                    <RelatedArticle ArticlesData={BlogData[BlogData.length-3]}/>
+                    <RelatedArticle ArticlesData={BlogData[BlogData.length-4]}/>
                 </div>
             </div>
         </div>

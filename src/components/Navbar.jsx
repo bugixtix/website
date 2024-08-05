@@ -46,7 +46,7 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$, 
     function DoChangeScreenWidth(){
         screen$(window.innerWidth);
         navOptions$(false)
-        console.log(window.innerWidth)
+        // console.log(window.innerWidth)
     }
     //
     useEffect(()=>{
@@ -64,7 +64,8 @@ export default function Navbar({darkMode, darkMode$, currentPage, currentPage$, 
     }
     //
     function DoHideMenu(){
-        navOptions === true ? navOptions$(false) : console.log('__DoHideMenu')
+        // navOptions ? navOptions$(false) : console.log('1');
+        if(navOptions) navOptions$(false)
     }
     return(
 
