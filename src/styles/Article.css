@@ -13,11 +13,15 @@ h2{
 h4{
     border-bottom: 0.4rem solid var(--dt-color-5);
     padding: 0.5rem 0rem;
-    
+    font-size: 2rem;
 }
 .markdown-content > ul, .markdown-content > ol {
     padding-left: 2rem;
-    line-height: 0.8;
+    line-height: 2rem;
+}
+.markdown-content > ul > li > em, em {
+    font-weight: 600;
+    font-style: normal;
 }
 p > img {
     width: 80%;
@@ -74,7 +78,7 @@ p > img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-bottom: 0.4rem solid var(--dynamic-color-5);
+    /* border-bottom: 0.4rem solid var(--dynamic-color-5); */
     /* border-radius: 1rem; */
 }
 .Article__imgSection_textContainer{
@@ -93,7 +97,7 @@ p > img {
 .Article__imgSection_description{
     font-size: 1.6rem ;
     font-style: oblique;
-    color: var(--dynamic-color-5);
+    color: var(--dynamic-color-1);
     /* background-color: var(--lt-color-4); */
     padding-left: 2rem;
 }

@@ -45,7 +45,7 @@ export default function Article({ArticlesData, darkMode}){
             behavior:'smooth'
         })
         //
-        fetch('/articles/example.txt')
+        fetch(ArticlesData.path)
         .then(response=>response.text())
         .then(text=>content$(text))
         .catch(error=>console.log('Message:',error))

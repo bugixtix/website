@@ -4,73 +4,94 @@
     {
         "id":0 ,
         "title":"Introduction To Javascript",
-        "img":"/images/javascriptMethods.png",
-        "description":"A short introduction to javascript"
+        "img":"/articles/introduction_to_javascript/introduction_to_javascript_cover.png",
+        "description":"JavaScript is a flexible programming language crucial for creating interactive and dynamic web pages. As a key technology for modern web development, it powers everything from simple animation to complex applications used by major websites and services.", 
+        "path":"/articles/introduction_to_javascript.txt"
     },
     {
         "id":1 ,
         "title":"NodeJS introduction",
         "img":"/images/nodejs.jpg",
-        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc.",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":2,
         "title":"Must-know CSS tricks",
         "img":"/images/cssTricks.jpg",
-        "description":"Here are some css tricks"
+        "description":"Here are some css tricks",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":3 ,
         "title":"Javascript Methods",
         "img":"/images/javascriptMethods.png",
-        "description":"The most common methods in javascript"
+        "description":"The most common methods in javascript",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":4 ,
         "title":"NodeJS introduction",
         "img":"/images/nodejs.jpg",
-        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc.",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":5,
         "title":"Must-know CSS tricks",
         "img":"/images/cssTricks.jpg",
-        "description":"Here are some css tricks"
+        "description":"Here are some css tricks",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":6 ,
         "title":"Javascript Methods",
         "img":"/images/javascriptMethods.png",
-        "description":"The most common methods in javascript"
+        "description":"The most common methods in javascript",
+        "path":"/articles/introduction_to_javascript.txt"
     },
     {
         "id":7 ,
         "title":"NodeJS introduction",
         "img":"/images/nodejs.jpg",
-        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc.",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":8,
         "title":"Must-know CSS tricks",
         "img":"/images/cssTricks.jpg",
-        "description":"Here are some css tricks"
+        "description":"Here are some css tricks",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":9,
         "title":"Javascript Methods",
         "img":"/images/javascriptMethods.png",
-        "description":"The most common methods in javascript"
+        "description":"The most common methods in javascript",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":10,
         "title":"NodeJS introduction",
         "img":"/images/nodejs.jpg",
-        "description":"An introduction to NodeJs and the important libraries such as express, os etc."
+        "description":"An introduction to NodeJs and the important libraries such as express, os etc.",
+        "path":"/articles/introduction_to_javascript.txt"
+
     },
     {
         "id":11,
         "title":"Must-know CSS tricks",
         "img":"/images/cssTricks.jpg",
-        "description":"Here are some css tricks"
+        "description":"Here are some css tricks",
+        "path":"/articles/introduction_to_javascript.txt"
     }
 ]
