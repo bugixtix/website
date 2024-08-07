@@ -18,13 +18,14 @@ h4{
 .markdown-content > ul, .markdown-content > ol {
     padding-left: 2rem;
     line-height: 2rem;
+    transform: translateY(-2rem);
 }
 .markdown-content > ul > li > em, em {
     font-weight: 600;
     font-style: normal;
 }
 p > img {
-    width: 80%;
+    width: 98%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -70,7 +71,7 @@ p > img {
     display: flex; flex-direction: column; 
     width: 100%;
     max-width: 800px;
-    height: 70vh;
+    max-height: 70vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -95,11 +96,12 @@ p > img {
     color: var(--dynamic-color-1);
 }
 .Article__imgSection_description{
-    font-size: 1.6rem ;
+    font-size: 2rem ;
     font-style: oblique;
     color: var(--dynamic-color-1);
     /* background-color: var(--lt-color-4); */
     padding-left: 2rem;
+    font-weight: 300;
 }
 
 .Article__mainSection{
@@ -211,11 +213,7 @@ p > img {
     transition:all ease 800ms;
 }
 @media only screen and (max-width:600px){
-    .Article__imgSection_imgContainer, .markdown-content > img {
-        height: 40vh;
-        width: 100%;
-        object-fit: contain;
-    }
+
     .Article__imgSection_textContainer{
         font-size: 2.2rem;        
     }
@@ -229,11 +227,7 @@ p > img {
     .scrollToTheTop{right: 2rem; bottom: 5rem;}
 }
 @media only screen and (max-width: 768px ) and (min-width: 600px){
-    .Article__imgSection_imgContainer, .markdown-content > p > img{
-        height: 40vh;
-        width: 100%;
-        object-fit: contain;
-    }
+
     .scrollToTheTop{right: 2rem;}
 
 }

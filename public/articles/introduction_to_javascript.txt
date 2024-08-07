@@ -1,14 +1,19 @@
-JavaScript is a popular programming language used to make websites interactive and dynamic. 
-Learning JavaScript is essential for anyone wanting to create modern websites or web applications. 
+JavaScript is a popular programming language used to make websites interactive and dynamic. Learning JavaScript is essential for anyone wanting to create modern websites or web applications. 
 
 #### What is JavaScript?
 
 JavaScript, often abbreviated as **JS**, is a high-level scripting language that enables you to implement complex features on web pages. It is used to enhance the user experience by making web pages more engaging and interactive. For example, Javascript can be used to create image sliders, interactive forms, and real-time updates.
 
+![What is JavaScript](/articles/introduction_to_javascript/what_is_javascript.jpg "What is JavaScript")
+<p class="picture-description"> What is JavaScript? <a href="https://somospnt.com/blog/109-como-funciona-javascript">image source</a></p>
+
 #### History of JavaScript
 
 JavaScript was created in 1995 by _Brenden Eich_ while he was working at **Netscape Communications Corporation**. Initially developed in just ten days, JavaScript was originally called **Mocha**, then renamed to **LiveScript**, and finally to **JavaScript** to align with the popularity of **Java** at the time.
  The language was standardized in 1997 under the name 'ECMAScript' by the European Computer Manufactures Assosiation (ECMA). This standardization allowed JavaScript to be implemented consistantly across different web browsers, smoothing the way for its widespread adoption. 
+
+![JavaScript History](/articles/introduction_to_javascript/javascript_history.png "JavaScript Hitsory")
+<p class="picture-description"> JavaScript History <a href="https://www.ample.co/blog/javascript-history">image source</a></p>
 
 #### Key Features
 
@@ -17,19 +22,29 @@ JavaScript was created in 1995 by _Brenden Eich_ while he was working at **Netsc
 * _Versatility_: JavaScript is not limited to just web development. It can be used for server-side programming with **Node.js**, mobile app development with frameworks like **React Native** and even desktop applications. 
 * _Community and Resources_: There is a vast community of JavaScript developers and a wealth of resourses available online. Wheather you are looking for tutorials, forums, or libraries to help you with your projects, you will find plenty of support. 
 
+![JavaScript Uses](/articles/introduction_to_javascript/javascript_uses.png "JavaScript Uses") 
+<p class="picture-description"> What is JavaScript good for </p>
 
 #### Development and Evolution
  JavaScript has evolved significantly since its inception. Major milestones in its development include: 
 * _ES5 (2009)_: Introduced features like "strict mode", JSON support, and improved object properties. 
 * _ES6/ECMAScript 2015 (2015)_: Added many modern features such as **let/const** variables, arrow functions, classes, and modules. ES6 marked a significant improvement in the language's capabilities and syntax. 
 
+![ECMAScript6 Features](/articles/introduction_to_javascript/ecmascript6_features.png)
+<p class="picture-description"> ES6 new features</p>
 
 #### Important Applications and Websites Using JavaScript
 JavaScript is used extensively across the web, powering some of the most popular applications and websites, such as Google, Facebook, Youtube and many more.
+
 Javascript is also the foundation for many modern web development frameworks and libraries such as: 
 * _React_: Developed by Facebook, used for building user interfaces. 
 * _Angular_: Maintained by Google, used for building dynamic web applications. 
 * _Vue.js_: A progressive framework for building user interfaces and single-page applications.
+
+![JavaScript Frameworks](/articles/introduction_to_javascript/javascript_frameworks.png "JavaScript Frameworks")
+<p class="picture-description"> Most popular frameworks use javascript <a href="https://www.lumar.io/ebooks/javascript-seo-guide/what-is-javascript/">image source</a></p>
+
+
 
 #### Conclusion
 JavaScript is a fundamental skill for web developers, providing the tools needed to create interactive and dynamic web pages. Its history of rapid development, standardization, and widespread adoption has made it a critical technology in web development. By learning JavaScript, you can build engaging web experiences and contribute to the many websites and applications that rely on this versatile language. 
