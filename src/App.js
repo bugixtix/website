@@ -13,6 +13,7 @@ import AllArticles from './components/AllArticles'
 import SearchResult from './components/SearchResult';
 import Gallery from './components/Gallery';
 import GetInTouch from './components/GetInTouch';
+import SubscribeToNewsletter from './components/SubscribeToNewsletter';
 
 import './App.css';
 import './styles/Navbar.css'
@@ -25,6 +26,7 @@ import './styles/Article.css'
 import './styles/Gallery.css'
 import './styles/AllArticles.css'
 import './styles/GetInTouch.css'
+import './styles/SubscribeToNewsletter.css'
 
 import BlogData from './Blog.json';
 

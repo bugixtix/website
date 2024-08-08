@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
+
 import Markdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw';
 
 // import 'highlight.js/styles/stackoverflow-dark.css';
 // import 'highlight.js/styles/tokyo-night-light.css';
+
 import { Link } from 'react-router-dom';
 
 import { IoShareSocial as Share } from "react-icons/io5";
@@ -12,7 +15,7 @@ import { GrCompliance as Swoosh } from "react-icons/gr";
 import { TbArrowBigUpFilled as Top } from "react-icons/tb";
 import { TbArrowBigDownFilled as Down } from "react-icons/tb";
 import BlogData from '../Blog.json'
-import rehypeRaw from 'rehype-raw';
+import SubscribeToNewsletter from './SubscribeToNewsletter';
 
 
 export default function Article({ArticlesData, darkMode}){
@@ -126,7 +129,9 @@ export default function Article({ArticlesData, darkMode}){
             <br/>
             <br/>
             <br/>
-
+            <div className='Article__SubscribeToNewsletter'>
+                <SubscribeToNewsletter/>
+            </div>
 
             <div className='Article__relatedSection' style={{backgroundColor:darkMode ? 'var(--dt-color-7)' : 'var(--dt-color-6)'}}>
                 <div className='Article__relatedSectionTitle'>
