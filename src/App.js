@@ -1,6 +1,6 @@
 import React,{useEffect, useRef, useState} from 'react'
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'
-import {CircleLoader as Loader} from 'react-spinners'
+// import {CircleLoader as Loader} from 'react-spinners'
 
 import Navbar from './components/Navbar'; 
 import Main from './components/Main';

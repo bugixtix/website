@@ -10,10 +10,10 @@
     },
     {
         "id":1 ,
-        "title":"NodeJS introduction",
-        "img":"/images/nodejs.jpg",
-        "description":"An introduction to NodeJs and the important libraries such as express, os etc.",
-        "path":"/articles/introduction_to_javascript.txt"
+        "title":"Introduction To Computer Network",
+        "img":"/articles/introduction_to_computer_network/introduction_to_computer_network_cover.webp",
+        "description":"An introduction to computer network",
+        "path":"/articles/introduction_to_computer_network/introduction_to_computer_network.txt"
 
     },
     {
